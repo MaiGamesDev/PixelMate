@@ -111,14 +111,14 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Node2D" type="Node2D"]
+[node name="ChatRoom" type="Node"]
 
 [node name="Background" type="Sprite" parent="."]
 texture = ExtResource( 8 )
 centered = false
 
 [node name="SpeechBubble" type="AnimatedSprite" parent="."]
-position = Vector2( 678, 125 )
+position = Vector2( 370, 147 )
 frames = SubResource( 6 )
 animation = "idle"
 playing = true
@@ -127,7 +127,6 @@ playing = true
 position = Vector2( 325, 84 )
 frames = SubResource( 12 )
 animation = "typing"
-frame = 1
 playing = true
 
 [node name="GirlPortrait" type="AnimatedSprite" parent="."]

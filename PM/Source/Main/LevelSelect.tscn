@@ -210,14 +210,14 @@ script = ExtResource( 9 )
 
 [node name="BackGround" type="AnimatedSprite" parent="."]
 frames = SubResource( 17 )
-frame = 13
+frame = 3
 playing = true
 centered = false
 
 [node name="SelectTitle" type="AnimatedSprite" parent="."]
 position = Vector2( 240, 36 )
 frames = SubResource( 39 )
-frame = 19
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

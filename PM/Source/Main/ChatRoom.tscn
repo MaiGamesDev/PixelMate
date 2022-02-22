@@ -81,13 +81,13 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 56, 54 )
-
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 56, 50 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 56, 54 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 2 )
@@ -95,14 +95,14 @@ region = Rect2( 0, 0, 56, 54 )
 
 [sub_resource type="SpriteFrames" id=16]
 animations = [ {
-"frames": [ SubResource( 13 ) ],
-"loop": true,
-"name": "minnie",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 14 ) ],
 "loop": true,
 "name": "erika",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 13 ) ],
+"loop": true,
+"name": "minnie",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 15 ) ],
@@ -127,6 +127,7 @@ playing = true
 position = Vector2( 325, 84 )
 frames = SubResource( 12 )
 animation = "typing"
+frame = 1
 playing = true
 
 [node name="GirlPortrait" type="AnimatedSprite" parent="."]

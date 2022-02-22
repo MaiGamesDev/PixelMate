@@ -206,18 +206,17 @@ script = ExtResource( 9 )
 
 [node name="BackGround" type="AnimatedSprite" parent="."]
 frames = SubResource( 17 )
-frame = 5
+frame = 12
 playing = true
 centered = false
 
 [node name="SelectTitle" type="AnimatedSprite" parent="."]
 position = Vector2( 240, 36 )
 frames = SubResource( 39 )
-frame = 18
+frame = 2
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-process_priority = 1
 anims/fadein = SubResource( 41 )
 
 [node name="UILayer" type="CanvasLayer" parent="."]
@@ -335,7 +334,6 @@ margin_bottom = 270.0
 rect_min_size = Vector2( 0, 10 )
 
 [node name="FadeInEffect" type="ColorRect" parent="UILayer"]
-process_priority = 2
 margin_right = 480.0
 margin_bottom = 270.0
 mouse_filter = 2

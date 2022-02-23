@@ -130,7 +130,7 @@ playing = true
 position = Vector2( 325, 84 )
 frames = SubResource( 12 )
 animation = "typing"
-frame = 1
+frame = 3
 playing = true
 
 [node name="GirlPortrait" type="AnimatedSprite" parent="."]

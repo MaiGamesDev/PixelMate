@@ -31,8 +31,8 @@ func _on_button_up():
 		
 		yield(get_tree().create_timer(0.15),"timeout")
 		
-		self_modulate.a = 100
 		texture.queue_free()
+		self_modulate.a = 100
 
 	if $Texture != null:
 		$Texture.rect_position.y = texture_origin_y

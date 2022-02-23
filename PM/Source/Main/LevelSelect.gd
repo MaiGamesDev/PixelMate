@@ -1,9 +1,5 @@
 extends Node
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$AnimationPlayer.play("fadein")
-
 func next_scene():
 	get_tree().change_scene("res://Source/Chat/ChatRoom.tscn")
 

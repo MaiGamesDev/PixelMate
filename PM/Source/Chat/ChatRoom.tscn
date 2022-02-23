@@ -15,10 +15,6 @@
 [ext_resource path="res://Art/Lucky/Chat Room Assets/SpeechBubble Opponent-export.png" type="Texture" id=13]
 [ext_resource path="res://Art/Lucky/Chat Room Assets/AffectionMeter_empty.png" type="Texture" id=14]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 11 )
-region = Rect2( 0, 0, 164, 48 )
-
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 10 )
 region = Rect2( 0, 0, 164, 48 )
@@ -35,22 +31,22 @@ region = Rect2( 328, 0, 164, 48 )
 atlas = ExtResource( 10 )
 region = Rect2( 492, 0, 164, 48 )
 
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 164, 48 )
+
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 1 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "typing",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
 } ]
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 12 )
-region = Rect2( 0, 0, 164, 48 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 13 )
@@ -68,18 +64,26 @@ region = Rect2( 328, 0, 164, 48 )
 atlas = ExtResource( 13 )
 region = Rect2( 492, 0, 164, 48 )
 
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 164, 48 )
+
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ SubResource( 7 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "typing",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 7 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
 } ]
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 56, 54 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 6 )
@@ -89,12 +93,13 @@ region = Rect2( 0, 0, 56, 50 )
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 56, 54 )
 
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 56, 54 )
-
 [sub_resource type="SpriteFrames" id=16]
 animations = [ {
+"frames": [ SubResource( 15 ) ],
+"loop": true,
+"name": "hyuna",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 14 ) ],
 "loop": true,
 "name": "erika",
@@ -103,11 +108,6 @@ animations = [ {
 "frames": [ SubResource( 13 ) ],
 "loop": true,
 "name": "minnie",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 15 ) ],
-"loop": true,
-"name": "hyuna",
 "speed": 5.0
 } ]
 

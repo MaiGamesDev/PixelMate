@@ -2,7 +2,6 @@ extends Node
 
 export(PackedScene) var chat_scene
 export(PackedScene) var player_chat_scene
-export(String, FILE, "*.json") var start_dialogue_file
 
 var dialogues = []
 var current_index = 0
@@ -14,7 +13,8 @@ onready var second_choice = $Choices/Second
 onready var third_choice = $Choices/Third
 
 func _ready() -> void:
-	init(start_dialogue_file)
+	$GirlCard/TextureRect.texture = GameManager.get_card_texture()
+	init(GameManager.get_dialogue_start())
 
 func _process(_delta: float) -> void:
 	if(Input.is_action_just_pressed("ui_accept")):

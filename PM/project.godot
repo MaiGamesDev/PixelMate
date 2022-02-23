@@ -14,6 +14,10 @@ config/name="PM"
 run/main_scene="res://Source/Main/StartMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameManager="*res://Source/Main/GameManager.tscn"
+
 [display]
 
 window/size/width=480

@@ -28,7 +28,6 @@ __meta__ = {
 }
 chat_scene = ExtResource( 3 )
 player_chat_scene = ExtResource( 9 )
-start_dialogue_file = "res://Resource/Dialogues/test.json"
 
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 480.0

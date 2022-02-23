@@ -1,0 +1,10 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Source/Main/GameManager.gd" type="Script" id=1]
+[ext_resource path="res://Art/Lucky/Level Select Assets/Minnie Card 200x.png" type="Texture" id=2]
+[ext_resource path="res://Art/Lucky/Level Select Assets/Hyuna Card 200x.png" type="Texture" id=3]
+[ext_resource path="res://Art/Lucky/Level Select Assets/Erika Card 200x.png" type="Texture" id=4]
+
+[node name="Node" type="Node"]
+script = ExtResource( 1 )
+girl_cards = [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ]

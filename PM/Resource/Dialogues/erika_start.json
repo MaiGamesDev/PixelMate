@@ -16,15 +16,18 @@
 			"choices": [
 				{
 					"text": "Let's be friends.",
-					"next": "pass"
+					"next": "pass",
+					"affection": 10
 				},
 				{
 					"text": "Huh as if.",
-					"next": "pass"
+					"next": "pass",
+					"affection": -10
 				},
 				{
 					"text": "Hi too",
-					"next": "pass"
+					"next": "pass",
+					"affection": 0
 				}
 			]
 		}

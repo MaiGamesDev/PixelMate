@@ -81,6 +81,9 @@ margin_right = 20.0
 margin_bottom = 206.0
 texture_progress = ExtResource( 5 )
 fill_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="GirlCard" type="TextureRect" parent="."]
 margin_left = 31.0

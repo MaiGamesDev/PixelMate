@@ -6,6 +6,7 @@ export(PackedScene) var player_chat_scene
 var dialogues = []
 var current_index = 0
 var skip_line = 0
+var current_affection = 0
 
 var current_dialogue
 var girl_portrait
@@ -19,6 +20,8 @@ onready var chat_area = $ChatArea/VBoxContainer
 onready var first_choice = $ChoiceButtons/FirstChoice
 onready var second_choice = $ChoiceButtons/SecondChoice
 onready var third_choice = $ChoiceButtons/ThirdChoice
+
+onready var affection_progress = $AffectionMeter/Progress
 
 func _ready() -> void:
 	disable_buttons()
@@ -93,7 +96,17 @@ func update_scroll():
 	yield(get_tree(), "idle_frame")
 	scrollcon.set_v_scroll(scrollcon.get_v_scrollbar().max_value)
 
-func choice_result(next):
+func check_affection(affection):
+	current_affection += affection
+	
+	if(current_affection < 0):
+		current_affection = 0
+	elif(current_affection > 100):
+		current_affection = 100
+	
+	affection_progress.value = current_affection
+
+func check_next(next):
 	match next:
 		"pass":
 			current_index += 1
@@ -105,14 +118,20 @@ func choice_result(next):
 func _on_FirstChoice_pressed() -> void:
 	disable_buttons()
 	player_chat.update_text(dialogues["events"][current_index]["choices"][0]["text"], 0)
-	choice_result(dialogues["events"][current_index]["choices"][0]["next"])
+	
+	check_affection(dialogues["events"][current_index]["choices"][0]["affection"])
+	check_next(dialogues["events"][current_index]["choices"][0]["next"])
 
 func _on_SecondChoice_pressed() -> void:
 	disable_buttons()
 	player_chat.update_text(dialogues["events"][current_index]["choices"][1]["text"], 0)
-	choice_result(dialogues["events"][current_index]["choices"][1]["next"])
+	
+	check_affection(dialogues["events"][current_index]["choices"][1]["affection"])
+	check_next(dialogues["events"][current_index]["choices"][1]["next"])
 
 func _on_ThirdChoice_pressed() -> void:
 	disable_buttons()
 	player_chat.update_text(dialogues["events"][current_index]["choices"][2]["text"], 0)
-	choice_result(dialogues["events"][current_index]["choices"][2]["next"])
+	
+	check_affection(dialogues["events"][current_index]["choices"][2]["affection"])
+	check_next(dialogues["events"][current_index]["choices"][2]["next"])

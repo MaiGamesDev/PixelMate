@@ -1,27 +1,27 @@
 [gd_scene load_steps=44 format=2]
 
-[ext_resource path="res://Art/Lucky/Battle Scene Assets/Battle Scene Button Placeholder 2x.png" type="Texture" id=1]
-[ext_resource path="res://Art/Lucky/Battle Scene Assets/Character Placeholder 2x.png" type="Texture" id=2]
-[ext_resource path="res://Art/Lucky/Battle Scene Assets/Opponent Stat Placeholder 2x.png" type="Texture" id=3]
+[ext_resource path="res://Art/Lucky/Battle Scene Assets/HeartCapsule-export.png" type="Texture" id=1]
+[ext_resource path="res://Resource/Font/monogram.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Art/Lucky/Battle Scene Assets/Main Character Sprites-export.png" type="Texture" id=3]
 [ext_resource path="res://Art/Lucky/Battle Scene Assets/HP_bar_empty.png" type="Texture" id=4]
 [ext_resource path="res://Art/Lucky/Battle Scene Assets/battle_button.png" type="Texture" id=5]
-[ext_resource path="res://Art/Lucky/Battle Scene Assets/HP_bar_progress.png" type="Texture" id=6]
-[ext_resource path="res://Art/Lucky/Battle Scene Assets/battle_button2.png" type="Texture" id=7]
+[ext_resource path="res://Art/Lucky/Battle Scene Assets/Girls Sprites-export.png" type="Texture" id=6]
+[ext_resource path="res://Art/Lucky/Battle Scene Assets/Battle Scene Button Placeholder 2x.png" type="Texture" id=7]
 [ext_resource path="res://Art/Lucky/Battle Scene Assets/Main Character Stat Placeholder 2x.png" type="Texture" id=8]
 [ext_resource path="res://Art/Lucky/Battle Scene Assets/Battle Scene Background 2x.png" type="Texture" id=9]
-[ext_resource path="res://Art/Lucky/Battle Scene Assets/Battle Scene Footer 2x.png" type="Texture" id=10]
-[ext_resource path="res://Art/Lucky/Battle Scene Assets/Girls Sprites-export.png" type="Texture" id=11]
-[ext_resource path="res://Art/Lucky/Battle Scene Assets/Main Character Sprites-export.png" type="Texture" id=12]
-[ext_resource path="res://Resource/Font/monogram.ttf" type="DynamicFontData" id=13]
-[ext_resource path="res://Source/Main/BattleSystem.gd" type="Script" id=14]
-[ext_resource path="res://Art/Lucky/Battle Scene Assets/HeartCapsule-export.png" type="Texture" id=15]
+[ext_resource path="res://Art/Lucky/Battle Scene Assets/Character Placeholder 2x.png" type="Texture" id=10]
+[ext_resource path="res://Art/Lucky/Battle Scene Assets/Opponent Stat Placeholder 2x.png" type="Texture" id=11]
+[ext_resource path="res://Art/Lucky/Battle Scene Assets/HP_bar_progress.png" type="Texture" id=12]
+[ext_resource path="res://Art/Lucky/Battle Scene Assets/battle_button2.png" type="Texture" id=13]
+[ext_resource path="res://Art/Lucky/Battle Scene Assets/Battle Scene Footer 2x.png" type="Texture" id=14]
+[ext_resource path="res://Source/Battle/BattleSystem.gd" type="Script" id=15]
 
 [sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 12 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 96, 128 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 12 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 128, 96, 128 )
 
 [sub_resource type="SpriteFrames" id=3]
@@ -38,15 +38,15 @@ animations = [ {
 } ]
 
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 6 )
 region = Rect2( 0, 256, 96, 128 )
 
 [sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 96, 128 )
 
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 6 )
 region = Rect2( 0, 128, 96, 128 )
 
 [sub_resource type="SpriteFrames" id=7]
@@ -69,80 +69,80 @@ animations = [ {
 
 [sub_resource type="DynamicFont" id=11]
 size = 24
-font_data = ExtResource( 13 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 24
-font_data = ExtResource( 13 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=8]
-font_data = ExtResource( 13 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="Theme" id=9]
 default_font = SubResource( 8 )
 
 [sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 1 )
 region = Rect2( 96, 0, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 1 )
 region = Rect2( 192, 0, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 1 )
 region = Rect2( 288, 0, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 1 )
 region = Rect2( 384, 0, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 1 )
 region = Rect2( 0, 96, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 1 )
 region = Rect2( 96, 96, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 1 )
 region = Rect2( 192, 96, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 1 )
 region = Rect2( 288, 96, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 1 )
 region = Rect2( 0, 192, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 1 )
 region = Rect2( 384, 96, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 1 )
 region = Rect2( 0, 96, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 1 )
 region = Rect2( 96, 96, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 1 )
 region = Rect2( 192, 96, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 1 )
 region = Rect2( 96, 192, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 1 )
 region = Rect2( 192, 192, 96, 96 )
 
 [sub_resource type="SpriteFrames" id=28]
@@ -154,7 +154,7 @@ animations = [ {
 } ]
 
 [node name="BattleScene" type="Node"]
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 18.0, 17.0, 137.0 ],
 "_edit_vertical_guides_": [ 44.0, 206.0, 48.0, 258.0 ]
@@ -166,7 +166,7 @@ centered = false
 
 [node name="PlayerPlace" type="Sprite" parent="."]
 position = Vector2( 114, 193 )
-texture = ExtResource( 2 )
+texture = ExtResource( 10 )
 
 [node name="PlayerStanding" type="AnimatedSprite" parent="PlayerPlace"]
 position = Vector2( -34, -53 )
@@ -175,7 +175,7 @@ animation = "idle"
 
 [node name="EnemyPlace" type="Sprite" parent="."]
 position = Vector2( 348, 108 )
-texture = ExtResource( 2 )
+texture = ExtResource( 10 )
 
 [node name="EnemyStanding" type="AnimatedSprite" parent="EnemyPlace"]
 position = Vector2( 0, -54 )
@@ -184,7 +184,7 @@ animation = "minnie"
 
 [node name="EnemyStatePlace" type="Sprite" parent="."]
 position = Vector2( 138, 38 )
-texture = ExtResource( 3 )
+texture = ExtResource( 11 )
 
 [node name="Name" type="Label" parent="EnemyStatePlace"]
 margin_left = -90.0
@@ -214,7 +214,7 @@ margin_top = 6.0
 margin_right = 160.0
 margin_bottom = 20.0
 value = 100.0
-texture_progress = ExtResource( 6 )
+texture_progress = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -251,17 +251,17 @@ margin_top = 6.0
 margin_right = 160.0
 margin_bottom = 20.0
 value = 100.0
-texture_progress = ExtResource( 6 )
+texture_progress = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Footer" type="Sprite" parent="."]
 position = Vector2( 240, 232 )
-texture = ExtResource( 10 )
+texture = ExtResource( 14 )
 
 [node name="ButtonPlace" type="Sprite" parent="Footer"]
-texture = ExtResource( 1 )
+texture = ExtResource( 7 )
 
 [node name="BattleInfo" type="Label" parent="Footer"]
 margin_left = -212.0
@@ -292,7 +292,7 @@ __meta__ = {
 margin_right = 102.0
 margin_bottom = 30.0
 texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 7 )
+texture_pressed = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -315,7 +315,7 @@ margin_left = 106.0
 margin_right = 208.0
 margin_bottom = 30.0
 texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 7 )
+texture_pressed = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -338,7 +338,7 @@ margin_top = 34.0
 margin_right = 102.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 7 )
+texture_pressed = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -362,7 +362,7 @@ margin_top = 34.0
 margin_right = 208.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 7 )
+texture_pressed = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

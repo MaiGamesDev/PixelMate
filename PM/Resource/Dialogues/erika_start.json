@@ -5,7 +5,28 @@
 	"events": [
 		{
 			"character": "Erika",
-			"text": "Hello. I am Erika. What's your name?"
+			"text": "Hello. I am Erika. What's your name? Don't be say, just tell me your name."
+		},
+		{
+			"character": "Erika",
+			"text": "I hope we can be friends."
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Let's be friends.",
+					"next": "pass"
+				},
+				{
+					"text": "Huh as if.",
+					"next": "pass"
+				},
+				{
+					"text": "Hi too",
+					"next": "pass"
+				}
+			]
 		}
 	]
 }

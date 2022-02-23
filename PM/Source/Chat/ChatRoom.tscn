@@ -1,124 +1,30 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://Art/Lucky/Chat Room Assets/minniePortrait.png" type="Texture" id=1]
-[ext_resource path="res://Art/Lucky/Chat Room Assets/hyunaPortrait.png" type="Texture" id=2]
+[ext_resource path="res://Source/Chat/Chat.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Source/Chat/PlayerChat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Art/Lucky/Chat Room Assets/DateButton.png" type="Texture" id=3]
 [ext_resource path="res://Art/Lucky/Chat Room Assets/optionButton.png" type="Texture" id=4]
 [ext_resource path="res://Art/Lucky/Chat Room Assets/AffectionMeter_progress.png" type="Texture" id=5]
-[ext_resource path="res://Art/Lucky/Chat Room Assets/erikaPortrait.png" type="Texture" id=6]
 [ext_resource path="res://Art/Lucky/Chat Room Assets/DateButton2.png" type="Texture" id=7]
 [ext_resource path="res://Art/Lucky/Chat Room Assets/ChatRoomBackgroun Straight 2x.png" type="Texture" id=8]
 [ext_resource path="res://Art/Lucky/Chat Room Assets/optionButton2.png" type="Texture" id=9]
-[ext_resource path="res://Art/Lucky/Chat Room Assets/SpeechBubble Main Character-export.png" type="Texture" id=10]
-[ext_resource path="res://Art/Lucky/Chat Room Assets/SpeechBubble2.png" type="Texture" id=11]
-[ext_resource path="res://Art/Lucky/Chat Room Assets/SpeechBubble3.png" type="Texture" id=12]
-[ext_resource path="res://Art/Lucky/Chat Room Assets/SpeechBubble Opponent-export.png" type="Texture" id=13]
 [ext_resource path="res://Art/Lucky/Chat Room Assets/AffectionMeter_empty.png" type="Texture" id=14]
 [ext_resource path="res://Art/Lucky/Chat Room Assets/optionButton3.png" type="Texture" id=15]
-[ext_resource path="res://Art/Lucky/Chat Room Assets/DateButton3.png" type="Texture" id=16]
 [ext_resource path="res://Source/Main/Button.gd" type="Script" id=17]
 [ext_resource path="res://Source/Chat/ChatSystem.gd" type="Script" id=18]
 [ext_resource path="res://Art/Lucky/Level Select Assets/DataCard2.png" type="Texture" id=19]
 [ext_resource path="res://Resource/Font/monogram.ttf" type="DynamicFontData" id=20]
 [ext_resource path="res://Art/Lucky/Level Select Assets/Erika Card 200x.png" type="Texture" id=21]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 11 )
-region = Rect2( 0, 0, 164, 48 )
-
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 10 )
-region = Rect2( 0, 0, 164, 48 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 10 )
-region = Rect2( 164, 0, 164, 48 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 10 )
-region = Rect2( 328, 0, 164, 48 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 10 )
-region = Rect2( 492, 0, 164, 48 )
-
-[sub_resource type="SpriteFrames" id=6]
-animations = [ {
-"frames": [ SubResource( 1 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
-"loop": true,
-"name": "typing",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 12 )
-region = Rect2( 0, 0, 164, 48 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 13 )
-region = Rect2( 0, 0, 164, 48 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 13 )
-region = Rect2( 164, 0, 164, 48 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 13 )
-region = Rect2( 328, 0, 164, 48 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 13 )
-region = Rect2( 492, 0, 164, 48 )
-
-[sub_resource type="SpriteFrames" id=12]
-animations = [ {
-"frames": [ SubResource( 7 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
-"loop": true,
-"name": "typing",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 56, 54 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 56, 54 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 56, 50 )
-
-[sub_resource type="SpriteFrames" id=16]
-animations = [ {
-"frames": [ SubResource( 15 ) ],
-"loop": true,
-"name": "hyuna",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 13 ) ],
-"loop": true,
-"name": "minnie",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 14 ) ],
-"loop": true,
-"name": "erika",
-"speed": 5.0
-} ]
-
 [sub_resource type="DynamicFont" id=18]
+font_data = ExtResource( 20 )
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="Theme" id=20]
+VScrollBar/styles/scroll = SubResource( 19 )
+
+[sub_resource type="DynamicFont" id=21]
 font_data = ExtResource( 20 )
 
 [sub_resource type="Animation" id=17]
@@ -150,52 +56,18 @@ tracks/1/keys = {
 
 [node name="ChatRoom" type="Node"]
 script = ExtResource( 18 )
+chat_scene = ExtResource( 1 )
+player_chat_scene = ExtResource( 2 )
 
 [node name="Background" type="Sprite" parent="."]
 texture = ExtResource( 8 )
 centered = false
 
-[node name="SpeechBubble" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( 370, 147 )
-frames = SubResource( 6 )
-animation = "idle"
-playing = true
-
-[node name="SpeechBubble2" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( 325, 84 )
-frames = SubResource( 12 )
-animation = "typing"
-frame = 2
-playing = true
-
-[node name="GirlPortrait" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( 85, 40 )
-frames = SubResource( 16 )
-animation = "hyuna"
-
-[node name="OptionButton" type="TextureButton" parent="."]
-margin_left = 235.0
-margin_top = 220.0
-margin_right = 331.0
-margin_bottom = 268.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 9 )
-script = ExtResource( 17 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-released_texture = ExtResource( 15 )
-
 [node name="AffectionMeter" type="TextureRect" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
 margin_left = 3.0
-margin_top = -114.0
+margin_top = 21.0
 margin_right = 43.0
-margin_bottom = 114.0
+margin_bottom = 249.0
 texture = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true,
@@ -248,11 +120,151 @@ margin_right = 152.0
 margin_bottom = 249.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChatArea" type="ScrollContainer" parent="."]
+margin_left = 232.0
+margin_top = 24.0
+margin_right = 442.0
+margin_bottom = 214.0
+theme = SubResource( 20 )
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChatArea"]
+margin_right = 210.0
+margin_bottom = 190.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="ChoiceButtons" type="HBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -301.0
+margin_top = -53.0
+margin_right = -5.0
+margin_bottom = -5.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="FirstChoice" type="TextureButton" parent="ChoiceButtons"]
+margin_right = 96.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 9 )
 script = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-released_texture = ExtResource( 16 )
+pressed_space = 3.0
+released_texture = ExtResource( 15 )
+
+[node name="Texture" type="TextureRect" parent="ChoiceButtons/FirstChoice"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ChoiceButtons/FirstChoice"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -6.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 21 )
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SecondChoice" type="TextureButton" parent="ChoiceButtons"]
+margin_left = 100.0
+margin_right = 196.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 9 )
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+pressed_space = 3.0
+released_texture = ExtResource( 15 )
+
+[node name="Texture" type="TextureRect" parent="ChoiceButtons/SecondChoice"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ChoiceButtons/SecondChoice"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -6.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 21 )
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThirdChoice" type="TextureButton" parent="ChoiceButtons"]
+margin_left = 200.0
+margin_right = 296.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 9 )
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+pressed_space = 3.0
+released_texture = ExtResource( 15 )
+
+[node name="Texture" type="TextureRect" parent="ChoiceButtons/ThirdChoice"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ChoiceButtons/ThirdChoice"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -6.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 21 )
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "fadein"
@@ -266,3 +278,10 @@ mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="pressed" from="ChoiceButtons/FirstChoice" to="." method="_on_FirstChoice_pressed"]
+[connection signal="pressed" from="ChoiceButtons/SecondChoice" to="." method="_on_SecondChoice_pressed"]
+[connection signal="pressed" from="ChoiceButtons/ThirdChoice" to="." method="_on_ThirdChoice_pressed"]

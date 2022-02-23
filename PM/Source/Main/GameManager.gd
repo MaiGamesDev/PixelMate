@@ -5,6 +5,7 @@ const minnie_dialogue_start = "res://Resource/Dialogues/minnie_start.json"
 const hyuna_dialogue_start = "res://Resource/Dialogues/hyuna_start.json"
 
 export(Array, Texture) var girl_cards
+export(Array, Texture) var girl_portraits
 
 enum Girl {
 	ERIKA,
@@ -13,9 +14,6 @@ enum Girl {
 }
 
 var selected_girl = Girl.ERIKA
-
-func get_card_texture() -> Texture:
-	return girl_cards[selected_girl]
 
 func get_dialogue_start() -> String:
 	match selected_girl:
@@ -27,3 +25,9 @@ func get_dialogue_start() -> String:
 			return hyuna_dialogue_start
 		_:
 			return erika_dialogue_start
+
+func get_card_texture() -> Texture:
+	return girl_cards[selected_girl]
+
+func get_portrait_texture() -> Texture:
+	return girl_portraits[selected_girl]

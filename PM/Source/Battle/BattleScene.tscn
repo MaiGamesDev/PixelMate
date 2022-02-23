@@ -41,13 +41,13 @@ animations = [ {
 atlas = ExtResource( 6 )
 region = Rect2( 0, 256, 96, 128 )
 
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 96, 128 )
-
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 128, 96, 128 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 96, 128 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
@@ -56,14 +56,14 @@ animations = [ {
 "name": "hyuna",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 4 ) ],
-"loop": true,
-"name": "erika",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 5 ) ],
 "loop": true,
 "name": "minnie",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ) ],
+"loop": true,
+"name": "erika",
 "speed": 5.0
 } ]
 

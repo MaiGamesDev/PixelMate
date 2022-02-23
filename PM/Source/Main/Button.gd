@@ -26,15 +26,15 @@ func _on_button_down():
 func _on_button_up():
 	if released_texture != null:
 		self_modulate.a = 0
-		var texture = Sprite.new()
-		texture.texture = released_texture
-		texture.centered = false
-		texture.show_behind_parent = true
-		add_child(texture)
+		var new_texture = Sprite.new()
+		new_texture.texture = released_texture
+		new_texture.centered = false
+		new_texture.show_behind_parent = true
+		add_child(new_texture)
 		
 		yield(get_tree().create_timer(0.15),"timeout")
 		
-		texture.queue_free()
+		new_texture.queue_free()
 		self_modulate.a = 100
 
 	if texture != null:

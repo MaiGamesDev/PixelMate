@@ -5,20 +5,27 @@ export(PackedScene) var player_chat_scene
 
 var dialogues = []
 var current_index = 0
+var skip_line = 0
+
+var current_dialogue
+var girl_portrait
+var player_chat
+
+onready var timer = $Timer
 
 onready var scrollcon = $ChatArea
 onready var chat_area = $ChatArea/VBoxContainer
-onready var first_choice = $Choices/First
-onready var second_choice = $Choices/Second
-onready var third_choice = $Choices/Third
+
+onready var first_choice = $ChoiceButtons/FirstChoice
+onready var second_choice = $ChoiceButtons/SecondChoice
+onready var third_choice = $ChoiceButtons/ThirdChoice
 
 func _ready() -> void:
+	disable_buttons()
+	
 	$GirlCard/TextureRect.texture = GameManager.get_card_texture()
+	girl_portrait = GameManager.get_portrait_texture()
 	init(GameManager.get_dialogue_start())
-
-func _process(_delta: float) -> void:
-	if(Input.is_action_just_pressed("ui_accept")):
-		show_dialogue()
 
 func init(dialogue_file):
 	var file = File.new()
@@ -26,22 +33,47 @@ func init(dialogue_file):
 		file.open(dialogue_file, file.READ)
 		dialogues = parse_json(file.get_as_text())
 		current_index = 0
+	
+	timer.start(2)
+	yield(timer, "timeout")
+	show_dialogue()
 
-func show_dialogue() -> void:
+func show_dialogue():
 	if not current_index >= len(dialogues["events"]):
 		if dialogues["events"][current_index]["character"] == "Player":
+			player_chat = player_chat_scene.instance()
+			chat_area.add_child(player_chat)
+			update_scroll()
+	
 			first_choice.get_node("Label").text = dialogues["events"][current_index]["choices"][0]["text"]
 			second_choice.get_node("Label").text = dialogues["events"][current_index]["choices"][1]["text"]
 			third_choice.get_node("Label").text = dialogues["events"][current_index]["choices"][2]["text"]
+			
 			enable_buttons()
 		else:
 			var chat_object = chat_scene.instance()
+			chat_object.init(girl_portrait)
 			chat_area.add_child(chat_object)
-			chat_object.get_node("Message").text = dialogues["events"][current_index]["text"]
-			current_index += 1
+			update_scroll()
 			
-			yield(get_tree(), "idle_frame")
-			scrollcon.set_v_scroll(scrollcon.get_v_scrollbar().max_value)
+			current_dialogue = dialogues["events"][current_index]["text"]
+			
+			if skip_line == 0:
+				timer.start(current_dialogue.length() * 0.1)
+				yield(timer, "timeout")
+			
+			chat_object.update_text(current_dialogue, skip_line)
+			
+			if chat_object.is_shown_all():
+				timer.start(1)
+				yield(timer, "timeout")
+				
+				skip_line = 0
+				current_index += 1
+				show_dialogue()
+			else:
+				skip_line += chat_object.get_max_line()
+				show_dialogue()
 
 func enable_buttons():
 	first_choice.disabled = false;
@@ -52,39 +84,35 @@ func disable_buttons():
 	first_choice.disabled = true;
 	second_choice.disabled = true;
 	third_choice.disabled = true;
+	
+	first_choice.get_node("Label").text = ""
+	second_choice.get_node("Label").text = ""
+	third_choice.get_node("Label").text = ""
 
-func _on_First_pressed() -> void:
-	var chat_object = player_chat_scene.instance()
-	chat_area.add_child(chat_object)
-	chat_object.get_node("Message").text = dialogues["events"][current_index]["choices"][0]["text"]
-	
-	disable_buttons()
+func update_scroll():
 	yield(get_tree(), "idle_frame")
 	scrollcon.set_v_scroll(scrollcon.get_v_scrollbar().max_value)
-	
-	var next_dialogue = "res://Resource/Dialogues/" + dialogues["events"][current_index]["choices"][0]["next"] + ".json"
-	init(next_dialogue)
-	
-func _on_Second_pressed() -> void:
-	var chat_object = player_chat_scene.instance()
-	chat_area.add_child(chat_object)
-	chat_object.get_node("Message").text = dialogues["events"][current_index]["choices"][1]["text"]
-	
-	disable_buttons()
-	yield(get_tree(), "idle_frame")
-	scrollcon.set_v_scroll(scrollcon.get_v_scrollbar().max_value)
-	
-	var next_dialogue = "res://Resource/Dialogues/" + dialogues["events"][current_index]["choices"][1]["next"] + ".json"
-	init(next_dialogue)
 
-func _on_Third_pressed() -> void:
-	var chat_object = player_chat_scene.instance()
-	chat_area.add_child(chat_object)
-	chat_object.get_node("Message").text = dialogues["events"][current_index]["choices"][2]["text"]
-	
+func choice_result(next):
+	match next:
+		"pass":
+			current_index += 1
+			show_dialogue()
+		_:
+			var next_dialogue = "res://Resource/Dialogues/" + next + ".json"
+			init(next_dialogue)
+
+func _on_FirstChoice_pressed() -> void:
 	disable_buttons()
-	yield(get_tree(), "idle_frame")
-	scrollcon.set_v_scroll(scrollcon.get_v_scrollbar().max_value)
-	
-	var next_dialogue = "res://Resource/Dialogues/" + dialogues["events"][current_index]["choices"][2]["next"] + ".json"
-	init(next_dialogue)
+	player_chat.update_text(dialogues["events"][current_index]["choices"][0]["text"], 0)
+	choice_result(dialogues["events"][current_index]["choices"][0]["next"])
+
+func _on_SecondChoice_pressed() -> void:
+	disable_buttons()
+	player_chat.update_text(dialogues["events"][current_index]["choices"][1]["text"], 0)
+	choice_result(dialogues["events"][current_index]["choices"][1]["next"])
+
+func _on_ThirdChoice_pressed() -> void:
+	disable_buttons()
+	player_chat.update_text(dialogues["events"][current_index]["choices"][2]["text"], 0)
+	choice_result(dialogues["events"][current_index]["choices"][2]["next"])

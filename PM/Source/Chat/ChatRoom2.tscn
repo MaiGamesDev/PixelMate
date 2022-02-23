@@ -10,10 +10,10 @@
 [ext_resource path="res://Resource/Font/monogram.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://Source/Chat/PlayerChat.tscn" type="PackedScene" id=9]
 
-[sub_resource type="StyleBoxEmpty" id=2]
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="Theme" id=3]
-VScrollBar/styles/scroll = SubResource( 2 )
+VScrollBar/styles/scroll = SubResource( 4 )
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 8 )
@@ -23,8 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_use_anchors_": false,
-"_edit_vertical_guides_": [ 300.0, 435.0 ]
+"_edit_use_anchors_": false
 }
 chat_scene = ExtResource( 3 )
 player_chat_scene = ExtResource( 9 )

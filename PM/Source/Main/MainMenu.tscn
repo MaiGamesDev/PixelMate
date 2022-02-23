@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Source/Main/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Art/setting.png" type="Texture" id=2]
 [ext_resource path="res://Art/start.png" type="Texture" id=3]
 [ext_resource path="res://Art/about.png" type="Texture" id=4]
 [ext_resource path="res://Resource/Font/monogram.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Art/Lucky/Home Scene Assets/PixelMate Button-export.png" type="Texture" id=6]
+[ext_resource path="res://Art/Lucky/Home Scene Assets/Home Scene Background.png" type="Texture" id=7]
+[ext_resource path="res://Art/Lucky/Home Scene Assets/Click Icon Text 2x-export.png" type="Texture" id=8]
+[ext_resource path="res://Art/Lucky/Home Scene Assets/Setting Button-export.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -17,23 +21,30 @@ font_data = ExtResource( 5 )
 [node name="MainMenu" type="Node"]
 script = ExtResource( 1 )
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="ClickIconText2x-export" type="Sprite" parent="."]
+position = Vector2( 116, -42 )
+texture = ExtResource( 8 )
 
-[node name="UI" type="Control" parent="UI"]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="HomeSceneBackground" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+centered = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/UI"]
+[node name="PixelMateButton-export" type="Sprite" parent="."]
+position = Vector2( -76, 211 )
+texture = ExtResource( 6 )
+
+[node name="SettingButton-export" type="Sprite" parent="."]
+position = Vector2( 78, 373 )
+texture = ExtResource( 9 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 480.0
 margin_bottom = 270.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="CenterContainer" parent="UI/UI/VBoxContainer"]
+[node name="Title" type="CenterContainer" parent="VBoxContainer"]
 margin_right = 480.0
 margin_bottom = 118.0
 size_flags_vertical = 3
@@ -41,7 +52,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="UI/UI/VBoxContainer/Title"]
+[node name="Label" type="Label" parent="VBoxContainer/Title"]
 margin_left = 120.0
 margin_top = 33.0
 margin_right = 360.0
@@ -52,13 +63,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Control" parent="UI/UI/VBoxContainer"]
+[node name="Control" type="Control" parent="VBoxContainer"]
 margin_top = 122.0
 margin_right = 480.0
 margin_bottom = 172.0
 rect_min_size = Vector2( 0, 50 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/UI/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 176.0
 margin_right = 480.0
 margin_bottom = 256.0
@@ -69,13 +80,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="About" type="TextureButton" parent="UI/UI/VBoxContainer/HBoxContainer"]
+[node name="About" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
 margin_left = 102.0
 margin_right = 182.0
 margin_bottom = 80.0
 texture_normal = ExtResource( 4 )
 
-[node name="Label3" type="Label" parent="UI/UI/VBoxContainer/HBoxContainer/About"]
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/About"]
 margin_left = 8.0
 margin_top = -31.0
 margin_right = 68.0
@@ -87,19 +98,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control2" type="Control" parent="UI/UI/VBoxContainer/HBoxContainer"]
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer"]
 margin_left = 186.0
 margin_right = 196.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 10, 0 )
 
-[node name="Start" type="TextureButton" parent="UI/UI/VBoxContainer/HBoxContainer"]
+[node name="Start" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
 margin_left = 200.0
 margin_right = 280.0
 margin_bottom = 80.0
 texture_normal = ExtResource( 3 )
 
-[node name="Label2" type="Label" parent="UI/UI/VBoxContainer/HBoxContainer/Start"]
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/Start"]
 margin_left = 12.0
 margin_top = -31.0
 margin_right = 72.0
@@ -111,19 +122,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control3" type="Control" parent="UI/UI/VBoxContainer/HBoxContainer"]
+[node name="Control3" type="Control" parent="VBoxContainer/HBoxContainer"]
 margin_left = 284.0
 margin_right = 294.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 10, 0 )
 
-[node name="Setting" type="TextureButton" parent="UI/UI/VBoxContainer/HBoxContainer"]
+[node name="Setting" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
 margin_left = 298.0
 margin_right = 378.0
 margin_bottom = 80.0
 texture_normal = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="UI/UI/VBoxContainer/HBoxContainer/Setting"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Setting"]
 margin_top = -31.0
 margin_right = 84.0
 margin_bottom = -5.0
@@ -134,20 +145,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control2" type="Control" parent="UI/UI/VBoxContainer"]
+[node name="Control2" type="Control" parent="VBoxContainer"]
 margin_top = 260.0
 margin_right = 480.0
 margin_bottom = 270.0
 rect_min_size = Vector2( 0, 10 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 480.0
-margin_bottom = 270.0
-color = Color( 0.768627, 0.690196, 0.941176, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[connection signal="pressed" from="UI/UI/VBoxContainer/HBoxContainer/About" to="." method="_on_About_pressed"]
-[connection signal="pressed" from="UI/UI/VBoxContainer/HBoxContainer/Start" to="." method="_on_Start_pressed"]
-[connection signal="pressed" from="UI/UI/VBoxContainer/HBoxContainer/Setting" to="." method="_on_Setting_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/About" to="." method="_on_About_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Setting" to="." method="_on_Setting_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Art/Lucky/Level Select Assets/Erika Card 200x.png" type="Texture" id=1]
 [ext_resource path="res://Art/Lucky/Level Select Assets/Hyuna Card 200x.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Art/Lucky/Level Select Assets/DataCard3.png" type="Texture" id=8]
 [ext_resource path="res://Source/Main/LevelSelect.gd" type="Script" id=9]
 [ext_resource path="res://Resource/Font/monogram.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Art/Lucky/Level Select Assets/DataCard2.png" type="Texture" id=11]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 4 )
@@ -178,7 +179,7 @@ animations = [ {
 [sub_resource type="Animation" id=41]
 resource_name = "fadein"
 tracks/0/type = "value"
-tracks/0/path = NodePath("UILayer/FadeInEffect:visible")
+tracks/0/path = NodePath("FadeInEffect:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -190,7 +191,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("UILayer/FadeInEffect:modulate")
+tracks/1/path = NodePath("FadeInEffect:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -210,30 +211,20 @@ script = ExtResource( 9 )
 
 [node name="BackGround" type="AnimatedSprite" parent="."]
 frames = SubResource( 17 )
-frame = 14
+frame = 13
 playing = true
 centered = false
 
 [node name="SelectTitle" type="AnimatedSprite" parent="."]
 position = Vector2( 240, 36 )
 frames = SubResource( 39 )
-frame = 2
+frame = 9
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/fadein = SubResource( 41 )
 
-[node name="UILayer" type="CanvasLayer" parent="."]
-
-[node name="UI" type="Control" parent="UILayer"]
-margin_right = 40.0
-margin_bottom = 40.0
-mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/UI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 480.0
 margin_bottom = 270.0
 mouse_filter = 2
@@ -241,13 +232,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Control" parent="UILayer/UI/VBoxContainer"]
+[node name="Control" type="Control" parent="VBoxContainer"]
 margin_right = 480.0
 margin_bottom = 76.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="HBoxContainer" parent="UILayer/UI/VBoxContainer"]
+[node name="Button" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 80.0
 margin_right = 480.0
 margin_bottom = 256.0
@@ -256,7 +247,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Erika" type="TextureButton" parent="UILayer/UI/VBoxContainer/Button"]
+[node name="Erika" type="TextureButton" parent="VBoxContainer/Button"]
 margin_left = 14.0
 margin_right = 146.0
 margin_bottom = 176.0
@@ -266,8 +257,9 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+released_texture = ExtResource( 11 )
 
-[node name="Texture" type="TextureRect" parent="UILayer/UI/VBoxContainer/Button/Erika"]
+[node name="Texture" type="TextureRect" parent="VBoxContainer/Button/Erika"]
 margin_left = 12.0
 margin_top = 10.0
 margin_right = 120.0
@@ -277,7 +269,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="UILayer/UI/VBoxContainer/Button/Erika"]
+[node name="Label" type="Label" parent="VBoxContainer/Button/Erika"]
 margin_left = 16.0
 margin_top = 74.0
 margin_right = 116.0
@@ -289,13 +281,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Control" parent="UILayer/UI/VBoxContainer/Button"]
+[node name="Control" type="Control" parent="VBoxContainer/Button"]
 margin_left = 150.0
 margin_right = 170.0
 margin_bottom = 176.0
 rect_min_size = Vector2( 20, 0 )
 
-[node name="Minnie" type="TextureButton" parent="UILayer/UI/VBoxContainer/Button"]
+[node name="Minnie" type="TextureButton" parent="VBoxContainer/Button"]
 margin_left = 174.0
 margin_right = 306.0
 margin_bottom = 176.0
@@ -305,8 +297,9 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+released_texture = ExtResource( 11 )
 
-[node name="Texture" type="TextureRect" parent="UILayer/UI/VBoxContainer/Button/Minnie"]
+[node name="Texture" type="TextureRect" parent="VBoxContainer/Button/Minnie"]
 margin_left = 12.0
 margin_top = 10.0
 margin_right = 120.0
@@ -316,7 +309,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="UILayer/UI/VBoxContainer/Button/Minnie"]
+[node name="Label" type="Label" parent="VBoxContainer/Button/Minnie"]
 margin_left = 16.0
 margin_top = 74.0
 margin_right = 116.0
@@ -328,13 +321,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control2" type="Control" parent="UILayer/UI/VBoxContainer/Button"]
+[node name="Control2" type="Control" parent="VBoxContainer/Button"]
 margin_left = 310.0
 margin_right = 330.0
 margin_bottom = 176.0
 rect_min_size = Vector2( 20, 0 )
 
-[node name="Hyuna" type="TextureButton" parent="UILayer/UI/VBoxContainer/Button"]
+[node name="Hyuna" type="TextureButton" parent="VBoxContainer/Button"]
 margin_left = 334.0
 margin_right = 466.0
 margin_bottom = 176.0
@@ -344,8 +337,9 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+released_texture = ExtResource( 11 )
 
-[node name="Texture" type="TextureRect" parent="UILayer/UI/VBoxContainer/Button/Hyuna"]
+[node name="Texture" type="TextureRect" parent="VBoxContainer/Button/Hyuna"]
 margin_left = 12.0
 margin_top = 10.0
 margin_right = 120.0
@@ -355,7 +349,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="UILayer/UI/VBoxContainer/Button/Hyuna"]
+[node name="Label" type="Label" parent="VBoxContainer/Button/Hyuna"]
 margin_left = 16.0
 margin_top = 74.0
 margin_right = 116.0
@@ -367,13 +361,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control2" type="Control" parent="UILayer/UI/VBoxContainer"]
+[node name="Control2" type="Control" parent="VBoxContainer"]
 margin_top = 260.0
 margin_right = 480.0
 margin_bottom = 270.0
 rect_min_size = Vector2( 0, 10 )
 
-[node name="FadeInEffect" type="ColorRect" parent="UILayer"]
+[node name="FadeInEffect" type="ColorRect" parent="."]
+visible = false
 margin_right = 480.0
 margin_bottom = 270.0
 mouse_filter = 2
@@ -381,6 +376,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="UILayer/UI/VBoxContainer/Button/Erika" to="." method="_on_Erika_pressed"]
-[connection signal="pressed" from="UILayer/UI/VBoxContainer/Button/Minnie" to="." method="_on_Minnie_pressed"]
-[connection signal="pressed" from="UILayer/UI/VBoxContainer/Button/Hyuna" to="." method="_on_Hyuna_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button/Erika" to="." method="_on_Erika_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button/Minnie" to="." method="_on_Minnie_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button/Hyuna" to="." method="_on_Hyuna_pressed"]

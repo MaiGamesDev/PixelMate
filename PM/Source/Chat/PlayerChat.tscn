@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Source/Main/Chat.gd" type="Script" id=1]
+[ext_resource path="res://Source/Chat/Chat.gd" type="Script" id=1]
 [ext_resource path="res://Resource/Font/monogram.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Art/Lucky/Chat Room Assets/SpeechBubble Main Character-export.png" type="Texture" id=3]
 

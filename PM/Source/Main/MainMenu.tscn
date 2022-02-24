@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Source/Main/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Art/Lucky/Home Scene Assets/PixelMate_Button.png" type="Texture" id=2]
@@ -10,6 +10,17 @@
 [ext_resource path="res://Art/Lucky/Home Scene Assets/Click Icon Text 2x-export.png" type="Texture" id=8]
 [ext_resource path="res://Art/Lucky/Home Scene Assets/Setting_Button.png" type="Texture" id=9]
 [ext_resource path="res://Source/Main/Button.gd" type="Script" id=10]
+[ext_resource path="res://Art/Lucky/Generic UI Assets/Button_Back2.png" type="Texture" id=11]
+[ext_resource path="res://Art/Lucky/Generic UI Assets/Button_Back1.png" type="Texture" id=12]
+[ext_resource path="res://Resource/Font/monogram.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://Art/Lucky/Generic UI Assets/9SliceWindow White-export.png" type="Texture" id=15]
+[ext_resource path="res://Art/Lucky/Generic UI Assets/Arrow_Down1.png" type="Texture" id=17]
+[ext_resource path="res://Art/Lucky/Generic UI Assets/Arrow_Down2.png" type="Texture" id=18]
+[ext_resource path="res://Source/Main/SettingPopup.gd" type="Script" id=20]
+[ext_resource path="res://Art/Lucky/Generic UI Assets/Arrow_Up2.png" type="Texture" id=21]
+[ext_resource path="res://Art/Lucky/Generic UI Assets/Button_Accept1.png" type="Texture" id=22]
+[ext_resource path="res://Art/Lucky/Generic UI Assets/Button_Accept2.png" type="Texture" id=23]
+[ext_resource path="res://Art/Lucky/Generic UI Assets/Arrow_Up1.png" type="Texture" id=24]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 8 )
@@ -35,6 +46,13 @@ animations = [ {
 "speed": 3.0
 } ]
 
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 14 )
+
 [node name="MainMenu" type="Node"]
 script = ExtResource( 1 )
 
@@ -45,7 +63,7 @@ centered = false
 [node name="ClickText" type="AnimatedSprite" parent="."]
 position = Vector2( 240, 228 )
 frames = SubResource( 5 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Start" type="TextureButton" parent="."]
@@ -85,10 +103,251 @@ released_texture = ExtResource( 3 )
 [node name="Texture" type="TextureRect" parent="Setting"]
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="Setting"]
 margin_right = 40.0
 margin_bottom = 14.0
 
+[node name="SettingPopup" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -171.0
+margin_top = -134.0
+margin_right = 171.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 184, 184 )
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="SettingPopup"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 184, 184 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="NinePatchRect" parent="SettingPopup/Margin"]
+margin_right = 342.0
+margin_bottom = 268.0
+texture = ExtResource( 15 )
+patch_margin_left = 36
+patch_margin_top = 34
+patch_margin_right = 36
+patch_margin_bottom = 36
+
+[node name="VBox" type="VBoxContainer" parent="SettingPopup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -134.0
+margin_top = -98.0
+margin_right = 134.0
+margin_bottom = 98.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SettingPopup/VBox"]
+margin_right = 268.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "- Setting - "
+align = 1
+
+[node name="Control" type="Control" parent="SettingPopup/VBox"]
+margin_top = 30.0
+margin_right = 268.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 2 )
+
+[node name="HBox" type="HBoxContainer" parent="SettingPopup/VBox"]
+margin_top = 36.0
+margin_right = 268.0
+margin_bottom = 72.0
+
+[node name="VBox" type="HBoxContainer" parent="SettingPopup/VBox/HBox"]
+margin_right = 110.0
+margin_bottom = 36.0
+
+[node name="Label" type="Label" parent="SettingPopup/VBox/HBox/VBox"]
+margin_top = 11.0
+margin_right = 90.0
+margin_bottom = 24.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "   Full Screen "
+align = 1
+
+[node name="Fullscreen" type="TextureButton" parent="SettingPopup/VBox/HBox/VBox"]
+margin_left = 94.0
+margin_top = 10.0
+margin_right = 110.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 16, 16 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 23 )
+expand = true
+stretch_mode = 4
+
+[node name="VBox2" type="HBoxContainer" parent="SettingPopup/VBox/HBox"]
+margin_left = 114.0
+margin_right = 234.0
+margin_bottom = 36.0
+
+[node name="Label" type="Label" parent="SettingPopup/VBox/HBox/VBox2"]
+margin_top = 11.0
+margin_right = 78.0
+margin_bottom = 24.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "     Volume  "
+align = 1
+
+[node name="Volume" type="Label" parent="SettingPopup/VBox/HBox/VBox2"]
+margin_left = 82.0
+margin_top = 11.0
+margin_right = 100.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 18, 0 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "100"
+align = 2
+
+[node name="VBox" type="VBoxContainer" parent="SettingPopup/VBox/HBox/VBox2"]
+margin_left = 104.0
+margin_right = 120.0
+margin_bottom = 36.0
+
+[node name="VolumeUp" type="TextureButton" parent="SettingPopup/VBox/HBox/VBox2/VBox"]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 21 )
+expand = true
+stretch_mode = 4
+
+[node name="VolumeDown" type="TextureButton" parent="SettingPopup/VBox/HBox/VBox2/VBox"]
+margin_top = 20.0
+margin_right = 16.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 16, 16 )
+rect_pivot_offset = Vector2( 16, 16 )
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 18 )
+expand = true
+stretch_mode = 4
+
+[node name="Control2" type="Control" parent="SettingPopup/VBox"]
+margin_top = 76.0
+margin_right = 268.0
+margin_bottom = 78.0
+rect_min_size = Vector2( 0, 2 )
+
+[node name="Label2" type="Label" parent="SettingPopup/VBox"]
+margin_top = 82.0
+margin_right = 268.0
+margin_bottom = 108.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "- Credit - "
+align = 1
+
+[node name="Control3" type="Control" parent="SettingPopup/VBox"]
+margin_top = 112.0
+margin_right = 268.0
+margin_bottom = 114.0
+rect_min_size = Vector2( 0, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="SettingPopup/VBox"]
+margin_top = 118.0
+margin_right = 268.0
+margin_bottom = 180.0
+
+[node name="Grid" type="GridContainer" parent="SettingPopup/VBox/CenterContainer"]
+margin_left = 66.0
+margin_right = 202.0
+margin_bottom = 62.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SettingPopup/VBox/CenterContainer/Grid"]
+margin_right = 60.0
+margin_bottom = 29.0
+custom_colors/font_color = Color( 0.533333, 0.262745, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "- Code -
+Goro"
+align = 1
+
+[node name="Label2" type="Label" parent="SettingPopup/VBox/CenterContainer/Grid"]
+margin_left = 64.0
+margin_right = 136.0
+margin_bottom = 29.0
+custom_colors/font_color = Color( 0.619608, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "- Art -
+Lucky90Happy"
+align = 1
+
+[node name="Label3" type="Label" parent="SettingPopup/VBox/CenterContainer/Grid"]
+margin_top = 33.0
+margin_right = 60.0
+margin_bottom = 62.0
+custom_colors/font_color = Color( 0.635294, 0.603922, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "- Design -
+Mai"
+align = 1
+
+[node name="Label4" type="Label" parent="SettingPopup/VBox/CenterContainer/Grid"]
+margin_left = 64.0
+margin_top = 33.0
+margin_right = 136.0
+margin_bottom = 62.0
+custom_colors/font_color = Color( 0, 0.0901961, 0.568627, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "- Sound -
+Nickitus"
+align = 1
+
+[node name="Close" type="TextureButton" parent="SettingPopup"]
+margin_left = 278.0
+margin_top = 30.0
+margin_right = 310.0
+margin_bottom = 62.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
-[connection signal="pressed" from="Setting" to="." method="_on_Setting_pressed"]
+[connection signal="pressed" from="Setting" to="SettingPopup" method="_on_Setting_pressed"]
+[connection signal="toggled" from="SettingPopup/VBox/HBox/VBox/Fullscreen" to="SettingPopup" method="_on_Fullscreen_toggled"]
+[connection signal="pressed" from="SettingPopup/VBox/HBox/VBox2/VBox/VolumeUp" to="SettingPopup" method="_on_VolumeUp_pressed"]
+[connection signal="pressed" from="SettingPopup/VBox/HBox/VBox2/VBox/VolumeDown" to="SettingPopup" method="_on_VolumeDown_pressed"]
+[connection signal="pressed" from="SettingPopup/Close" to="SettingPopup" method="_on_Close_pressed"]

@@ -45,6 +45,7 @@ centered = false
 [node name="ClickText" type="AnimatedSprite" parent="."]
 position = Vector2( 240, 228 )
 frames = SubResource( 5 )
+frame = 3
 playing = true
 
 [node name="Start" type="TextureButton" parent="."]
@@ -60,6 +61,14 @@ __meta__ = {
 }
 released_texture = ExtResource( 6 )
 
+[node name="Texture" type="TextureRect" parent="Start"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="Start"]
+margin_right = 40.0
+margin_bottom = 14.0
+
 [node name="Setting" type="TextureButton" parent="."]
 margin_left = 412.0
 margin_top = 16.0
@@ -72,6 +81,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 released_texture = ExtResource( 3 )
+
+[node name="Texture" type="TextureRect" parent="Setting"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="Setting"]
+margin_right = 40.0
+margin_bottom = 14.0
 
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="Setting" to="." method="_on_Setting_pressed"]

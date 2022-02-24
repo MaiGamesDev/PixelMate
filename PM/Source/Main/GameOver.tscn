@@ -1,3 +1,76 @@
-[gd_scene format=2]
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Source/Main/Button.gd" type="Script" id=1]
+[ext_resource path="res://Resource/Font/monogram.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Source/Main/GameOver.gd" type="Script" id=3]
+[ext_resource path="res://Art/Lucky/Generic UI Assets/Button3.png" type="Texture" id=4]
+[ext_resource path="res://Art/Lucky/Generic UI Assets/Button2.png" type="Texture" id=5]
+[ext_resource path="res://Art/Lucky/Generic UI Assets/Button1.png" type="Texture" id=6]
+[ext_resource path="res://Art/Lucky/Losing Scene Assets/losing scene.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
 
 [node name="GameOver" type="Node"]
+script = ExtResource( 3 )
+
+[node name="LosingScene" type="Sprite" parent="."]
+position = Vector2( 240, 136 )
+texture = ExtResource( 7 )
+
+[node name="Yes" type="TextureButton" parent="."]
+margin_left = 400.0
+margin_top = 134.0
+margin_right = 464.0
+margin_bottom = 166.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+pressed_space = 4.0
+released_texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="Yes"]
+margin_top = 2.0
+margin_right = 65.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Yes!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="No" type="TextureButton" parent="."]
+margin_left = 400.0
+margin_top = 168.0
+margin_right = 464.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+pressed_space = 4.0
+released_texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="No"]
+margin_top = 2.0
+margin_right = 65.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "No..."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="Yes" to="." method="_on_Yes_button_up"]
+[connection signal="button_up" from="No" to="." method="_on_No_button_up"]

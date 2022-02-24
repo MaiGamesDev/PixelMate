@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Woman_laugh.wav-9cffc725d6031b57b22037ac11a86c2b.sample"
+
+[deps]
+
+source_file="res://Sound/SFX/Woman_laugh.wav"
+dest_files=[ "res://.import/Woman_laugh.wav-9cffc725d6031b57b22037ac11a86c2b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

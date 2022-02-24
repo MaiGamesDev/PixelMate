@@ -45,6 +45,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Texture" type="TextureRect" parent="Yes"]
+margin_right = 40.0
+margin_bottom = 40.0
+
 [node name="No" type="TextureButton" parent="."]
 margin_left = 400.0
 margin_top = 168.0
@@ -71,6 +75,10 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Texture" type="TextureRect" parent="No"]
+margin_right = 40.0
+margin_bottom = 40.0
 
 [connection signal="button_up" from="Yes" to="." method="_on_Yes_button_up"]
 [connection signal="button_up" from="No" to="." method="_on_No_button_up"]

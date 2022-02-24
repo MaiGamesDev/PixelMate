@@ -38,24 +38,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=11]
-size = 24
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=29]
-size = 24
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=10]
-size = 24
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=8]
-font_data = ExtResource( 2 )
-
-[sub_resource type="Theme" id=9]
-default_font = SubResource( 8 )
-
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 96, 96 )
@@ -128,8 +110,30 @@ animations = [ {
 "speed": 6.0
 } ]
 
+[sub_resource type="DynamicFont" id=11]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=29]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=9]
+default_font = SubResource( 8 )
+
 [node name="BattleScene" type="Node"]
 script = ExtResource( 15 )
+flirt_texts = [ "You try to Flirt. You tell her, \"I hope you know CPR, because you just took my breath away!\"", "You try to Flirt. You tell her, \"I ought to complain to Spotify for you not being named this week’s hottest single.\"", "You try to Flirt. You tell her, \"Do you happen to have a Band-Aid? ‘Cause I scraped my knees falling for you.\"", "You try to Flirt. You tell her, \"I never believed in love at first sight, but that was before I saw you.\"" ]
+listen_texts = [ "You offer your ear for her." ]
+humour_texts = [ "You make a joke. You tell her, \"If you were a vegetable, you’d be a ‘cute-cumber.’\"", "You make a joke. You tell her, \"Why do we tell actors to  ‘break a leg?’ Because every play has a cast.\"", "You make a joke. You tell her, \"Don’t challenge Death to a pillow fight. Unless you’re prepared for the reaper cushions.\"", "You make a joke. You tell her, \"There’s a fine line between a numerator and a denominator.\"", "You make a joke. You tell her, \"Did you hear about the first restaurant to open on the moon? It had great food, but no atmosphere.\"", "You make a joke. You tell her, \"What did one ocean say to the other ocean? Nothing, it just waved.\"", "You make a joke. You tell her, \"Do you want to hear a construction joke? Sorry, I'm still working on it.\"", "You make a joke. You tell her, \"Why should you never trust stairs? They’re always up to something.\"", "You make a joke. You tell her, \"Which bear is the most condescending? A pan-duh!\"", "You make a joke. You tell her, \"What kind of noise does a witch’s vehicle make? Brrrroooom, brrroooom.\"", "You make a joke. You tell her, \"What’s brown and sticky? A stick.\"", "You make a joke. You tell her, \"Why are elevator jokes so classic and good? They work on many levels.\"" ]
+gift_texts = [ "You give her a gift and ask her to go out." ]
 
 [node name="Background" type="Sprite" parent="."]
 texture = ExtResource( 9 )
@@ -151,6 +155,14 @@ texture = ExtResource( 10 )
 [node name="EnemyStanding" type="Sprite" parent="EnemyPlace"]
 position = Vector2( 0, -54 )
 texture = ExtResource( 6 )
+
+[node name="Capsule" type="AnimatedSprite" parent="EnemyPlace"]
+position = Vector2( 0, -13 )
+frames = SubResource( 28 )
+animation = "catch"
+
+[node name="Capsule2" type="Sprite" parent="EnemyPlace"]
+visible = false
 
 [node name="EnemyStatePlace" type="Sprite" parent="."]
 position = Vector2( 138, 38 )
@@ -234,13 +246,14 @@ texture = ExtResource( 14 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -212.0
-margin_top = -31.0
-margin_right = -270.0
-margin_bottom = -47.0
+margin_left = -208.0
+margin_top = -33.0
+margin_right = -274.0
+margin_bottom = -49.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 29 )
 text = "Attack"
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -404,13 +417,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Capsule" type="AnimatedSprite" parent="."]
-position = Vector2( 306, -36 )
-frames = SubResource( 28 )
-animation = "catch"
-
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [connection signal="pressed" from="Footer/BattleAction/BattleButtons/Flirt" to="." method="_on_Flirt_pressed"]
 [connection signal="pressed" from="Footer/BattleAction/BattleButtons/Listen" to="." method="_on_Listen_pressed"]

@@ -17,6 +17,13 @@ enum MOVE {
 	GIFT
 }
 
+enum GIRL_MOVE {
+	LOW,
+	HIGH,
+	LISTEN,
+	IGNORE
+}
+
 export(Array, Texture) var girl_cards
 export(Array, Texture) var girl_portraits
 export(Array, Texture) var girl_sprites
@@ -25,6 +32,10 @@ export(Array, MOVE) var effective_moves
 export(Array, MOVE) var not_effective_moves
 
 var selected_girl = Girl.ERIKA
+var rng = RandomNumberGenerator.new()
+
+func _ready() -> void:
+	rng.randomize()
 
 func get_dialogue_start() -> String:
 	match selected_girl:
@@ -62,3 +73,6 @@ func get_effective_move() -> int:
 
 func get_not_effective_move() -> int:
 	return not_effective_moves[selected_girl]
+
+func get_girl_move() -> int:
+	return rng.randi_range(0, GIRL_MOVE.size() - 1)

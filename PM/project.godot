@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="PM"
-run/main_scene="res://Source/Main/StartMenu.tscn"
+run/main_scene="res://Source/Main/IntroComic.tscn"
 config/icon="res://icon.png"
 
 [autoload]

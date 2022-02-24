@@ -45,7 +45,6 @@ centered = false
 [node name="ClickText" type="AnimatedSprite" parent="."]
 position = Vector2( 240, 228 )
 frames = SubResource( 5 )
-frame = 1
 playing = true
 
 [node name="Start" type="TextureButton" parent="."]

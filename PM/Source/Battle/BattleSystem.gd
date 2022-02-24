@@ -47,14 +47,17 @@ func standby():
 		yield(timer, "timeout")
 		
 		get_tree().change_scene("res://Source/Main/GameOver.tscn")
-
-	battle_log.hide()
-	battle_container.show()
+	
+	if catched:
+		timer.start(1.5)
+		yield(timer, "timeout")
+		
+		get_tree().change_scene("res://Source/Main/WinningScene.tscn")
+	else:
+		battle_log.hide()
+		battle_container.show()
 
 func play_turn():
-#	if catched:
-#		get_tree().change_scene("res://Source/Main/WinningScene.tscn")
-	
 	var text = ""
 	var girl_move = GameManager.get_girl_move()
 	
@@ -122,6 +125,12 @@ func play_turn():
 #
 #		timer.start(battle_log.text.length() * 0.1)
 #		yield(timer, "timeout")
+	else:
+		yield(catch(), "completed")
+		
+		if catched:
+			standby()
+			return
 	
 	match girl_move:
 		GameManager.GIRL_MOVE.LOW:
@@ -142,12 +151,6 @@ func play_turn():
 	
 	standby()
 
-func player_action(move, text, effective_text = "", normal_text = "", not_effective_text = ""):
-	if move == GameManager.MOVE.GIFT:
-		yield(catch(), "completed")
-	
-	play_turn()
-
 func apply_damage(value):
 	var damage = rng.randf_range(value * 0.75, value * 1.25)
 	
@@ -167,15 +170,27 @@ func get_damage(value):
 	hp_bar.value = health
 
 func catch():
+	var m = rng.randi_range(0, 255)
+	
 	capsule.play("catch")
 	
 	timer.start(0.5)
 	yield(timer, "timeout")
 	
 	girl_sprite.texture = null
-	yield(capsule, "animation_finished")
 	
-	catched = true
+	# 1 / 12 of health is guaranteed
+	var f = (100 * 255) / (girl_health * 12)
+	if f >= m:
+		yield(capsule, "animation_finished")
+		catched = true
+	else:
+		timer.start(1.5)
+		yield(timer, "timeout")
+		
+		capsule.stop()
+		capsule.frame = 0
+		girl_sprite.texture = GameManager.get_sprite_texture()
 
 func _on_Flirt_pressed() -> void:
 	move = GameManager.MOVE.FLIRT

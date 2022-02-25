@@ -1,0 +1,18 @@
+{
+	"metadata": {
+		"name": "erika_4_1"
+	},
+	"events": [
+		{
+			"character": "Erika",
+			"text": "Soulmate? that's philosophical!"
+		},
+		{
+			"character": "Erika",
+			"text": "It was nice talking with you! Do you have anything more to say to me?"
+		},
+		{
+			"character": "End"
+		}
+	]
+}

@@ -1,0 +1,63 @@
+{
+	"metadata": {
+		"name": "erika_3"
+	},
+	"events": [
+		{
+			"character": "Erika",
+			"text": "My parents are really strict. The most terrifying thing is them trying to marry me with a stranger. They just said that he's the vice president of a famous  major company."
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Is that guy handsome?",
+					"next": "pass",
+					"affection": 0
+				},
+				{
+					"text": "That's too bad.",
+					"next": "erika_4",
+					"affection": 15
+				},
+				{
+					"text": "Just do what they say, breaking parents' word is bad.",
+					"next": "erika_4",
+					"affection": -5
+				}
+			]
+		},
+		{
+			"character": "Erika",
+			"text": "Uhhh, I don't really know him."
+		},
+		{
+			"character": "Erika",
+			"text": "Because I haven't even seen any picture of him haha"
+		},
+		{
+			"character": "Erika",
+			"text": "That's why I installed this app! To find a nice man, also someone my parents will like... I hope so. By the way, why did you install this app?"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "To find a soulmate.",
+					"next": "erika_4_1",
+					"affection": 15
+				},
+				{
+					"text": "To meet someone like you.",
+					"next": "erika_4_2",
+					"affection": 20
+				},
+				{
+					"text": "To meet someone like you.",
+					"next": "erika_4_2",
+					"affection": 20
+				}
+			]
+		}
+	]
+}

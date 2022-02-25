@@ -1,0 +1,31 @@
+{
+	"metadata": {
+		"name": "erika_2"
+	},
+	"events": [
+		{
+			"character": "Erika",
+			"text": "Anyway, have you ever really hated your parents?\nLike, you don't want to see them ever again."
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Yeah, sometimes I really hate them.",
+					"next": "erika_3",
+					"affection": 15
+				},
+				{
+					"text": "Never, my parents are nice people.",
+					"next": "erika_3",
+					"affection": 5
+				},
+				{
+					"text": "Never, my parents are nice people.",
+					"next": "erika_3",
+					"affection": 5
+				}
+			]
+		}
+	]
+}

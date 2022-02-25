@@ -1,0 +1,18 @@
+{
+	"metadata": {
+		"name": "erika_4_2"
+	},
+	"events": [
+		{
+			"character": "Erika",
+			"text": "Awww, I'm so touched by your words!! >-<"
+		},
+		{
+			"character": "Erika",
+			"text": "It was nice talking with you! Do you have anything more to say to me?"
+		},
+		{
+			"character": "End"
+		}
+	]
+}

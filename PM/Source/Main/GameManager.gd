@@ -95,3 +95,6 @@ func get_girl_success() -> String:
 
 func get_girl_fail() -> String:
 	return girls[selected_girl].date_fail
+
+func get_girl_affection() -> String:
+	return girls[selected_girl].affection_threshold

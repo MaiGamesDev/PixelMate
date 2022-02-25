@@ -25,6 +25,7 @@ onready var second_choice = $ChoiceButtons/SecondChoice
 onready var third_choice = $ChoiceButtons/ThirdChoice
 
 onready var affection_progress = $AffectionMeter/Progress
+onready var heart_effect = $Particles2D
 
 func _ready() -> void:
 	disable_buttons()
@@ -121,6 +122,12 @@ func check_affection(affection):
 		current_affection = 100
 	
 	affection_progress.value = current_affection
+	
+	if affection > 0:
+		heart_effect.emitting = true
+		timer.start(0.5)
+		yield(timer, "timeout")
+		heart_effect.emitting = false
 
 func check_next(next):
 	match next:
@@ -153,7 +160,7 @@ func _on_DateButton_pressed() -> void:
 	update_scroll()
 	
 	var dating
-	if current_affection < 80:
+	if current_affection < GameManager.get_girl_affection():
 		dating = false
 		current_dialogue = GameManager.get_girl_fail()
 	else:
@@ -176,7 +183,7 @@ func _on_DateButton_pressed() -> void:
 	
 		chat_object.update_text(current_dialogue, skip_line)
 		
-	timer.start(current_dialogue.length() * 0.1)
+	timer.start(current_dialogue.length() * 0.08)
 	yield(timer, "timeout")
 	
 	if dating:

@@ -1,0 +1,31 @@
+{
+	"metadata": {
+		"name": "erika_4"
+	},
+	"events": [
+		{
+			"character": "Erika",
+			"text": "That's why I installed this app! To find a nice man, also someone my parents will like... I hope so. By the way, why did you install this app?"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "To find a soulmate.",
+					"next": "erika_4_1",
+					"affection": 15
+				},
+				{
+					"text": "To meet someone like you.",
+					"next": "erika_4_2",
+					"affection": 20
+				},
+				{
+					"text": "To meet someone like you.",
+					"next": "erika_4_2",
+					"affection": 20
+				}
+			]
+		}
+	]
+}

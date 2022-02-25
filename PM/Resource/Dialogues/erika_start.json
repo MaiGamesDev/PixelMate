@@ -5,29 +5,77 @@
 	"events": [
 		{
 			"character": "Erika",
-			"text": "Hello. I am Erika. What's your name? Don't be say, just tell me your name."
-		},
-		{
-			"character": "Erika",
-			"text": "I hope we can be friends."
+			"text": "Hello there! My name is Erika Marson."
 		},
 		{
 			"character": "Player",
 			"choices": [
 				{
-					"text": "Let's be friends.",
-					"next": "pass",
-					"affection": 10
+					"text": "Hello!",
+					"next": "erika_2",
+					"affection": 5
 				},
 				{
-					"text": "Huh as if.",
+					"text": "Hi, I'm a 36-year-old divorced man.",
 					"next": "pass",
-					"affection": -10
+					"affection": 5
 				},
 				{
-					"text": "Hi too",
-					"next": "pass",
+					"text": "Whatsup.",
+					"next": "erika_2",
 					"affection": 0
+				}
+			]
+		},
+		{
+			"character": "Erika",
+			"text": "Really? That's funny joke haha.."
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "It's NOT a joke, my wife really left me yesterday.",
+					"next": "pass",
+					"affection": -5
+				},
+				{
+					"text": "Of course XD",
+					"next": "erika_2",
+					"affection": 5
+				},
+				{
+					"text": "Of course XD",
+					"next": "erika_2",
+					"affection": 5
+				}
+			]
+		},
+		{
+			"character": "Erika",
+			"text": "Oh… sorry about that.. please forgive me. ;-;"
+		},
+		{
+			"character": "Erika",
+			"text": "Anyway, have you ever really hated your parents?\nLike, you don't want to see them ever again."
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Yeah, sometimes I really hate them.",
+					"next": "erika_3",
+					"affection": 15
+				},
+				{
+					"text": "Never, my parents are nice people.",
+					"next": "erika_3",
+					"affection": 5
+				},
+				{
+					"text": "Never, my parents are nice people.",
+					"next": "erika_3",
+					"affection": 5
 				}
 			]
 		}

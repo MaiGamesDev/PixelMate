@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Source/Main/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Art/Lucky/Home Scene Assets/PixelMate_Button.png" type="Texture" id=2]
@@ -53,6 +53,65 @@ font_data = ExtResource( 14 )
 [sub_resource type="DynamicFont" id=7]
 font_data = ExtResource( 14 )
 
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Transition:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "fadein"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Transition:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "fadeout"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Transition:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "next_scene"
+} ]
+}
+
 [node name="MainMenu" type="Node"]
 script = ExtResource( 1 )
 
@@ -63,7 +122,7 @@ centered = false
 [node name="ClickText" type="AnimatedSprite" parent="."]
 position = Vector2( 240, 228 )
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Start" type="TextureButton" parent="."]
@@ -342,6 +401,20 @@ margin_right = 310.0
 margin_bottom = 62.0
 texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "fadein"
+anims/RESET = SubResource( 8 )
+anims/fadein = SubResource( 9 )
+anims/fadeout = SubResource( 10 )
+
+[node name="Transition" type="ColorRect" parent="."]
+margin_right = 480.0
+margin_bottom = 270.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

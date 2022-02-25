@@ -245,6 +245,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="DynamicFont" id=42]
+size = 14
 font_data = ExtResource( 10 )
 
 [node name="LevelSelect" type="Node"]
@@ -252,14 +253,14 @@ script = ExtResource( 9 )
 
 [node name="BackGround" type="AnimatedSprite" parent="."]
 frames = SubResource( 17 )
-frame = 10
+frame = 4
 playing = true
 centered = false
 
 [node name="SelectTitle" type="AnimatedSprite" parent="."]
 position = Vector2( 240, 36 )
 frames = SubResource( 39 )
-frame = 11
+frame = 12
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -313,9 +314,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/Button/Erika"]
-margin_left = 16.0
-margin_top = 74.0
-margin_right = 116.0
+margin_left = 17.0
+margin_top = 73.0
+margin_right = 115.0
 margin_bottom = 156.0
 custom_colors/font_color = Color( 0.796078, 0.301961, 0.407843, 1 )
 custom_fonts/font = SubResource( 42 )
@@ -353,9 +354,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/Button/Minnie"]
-margin_left = 16.0
-margin_top = 74.0
-margin_right = 116.0
+margin_left = 17.0
+margin_top = 73.0
+margin_right = 115.0
 margin_bottom = 156.0
 custom_colors/font_color = Color( 0.796078, 0.301961, 0.407843, 1 )
 custom_fonts/font = SubResource( 42 )
@@ -393,9 +394,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/Button/Hyuna"]
-margin_left = 16.0
-margin_top = 74.0
-margin_right = 116.0
+margin_left = 17.0
+margin_top = 73.0
+margin_right = 115.0
 margin_bottom = 156.0
 custom_colors/font_color = Color( 0.796078, 0.301961, 0.407843, 1 )
 custom_fonts/font = SubResource( 42 )

@@ -34,8 +34,11 @@ export(Array, MOVE) var not_effective_moves
 var selected_girl = Girl.ERIKA
 var rng = RandomNumberGenerator.new()
 
+var girls
+
 func _ready() -> void:
 	rng.randomize()
+	girls = get_children()
 
 func get_dialogue_start() -> String:
 	match selected_girl:
@@ -76,3 +79,9 @@ func get_not_effective_move() -> int:
 
 func get_girl_move() -> int:
 	return rng.randi_range(0, GIRL_MOVE.size() - 1)
+
+func get_age(girl) -> int:
+	return girls[girl].age
+	
+func get_description(girl) -> int:
+	return girls[girl].short_description

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Source/Main/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://Art/Lucky/Level Select Assets/Minnie Card 200x.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Art/Lucky/Battle Scene Assets/Erika_Sprites.png" type="Texture" id=8]
 [ext_resource path="res://Art/Lucky/Battle Scene Assets/Hyuna_Sprites.png" type="Texture" id=9]
 [ext_resource path="res://Art/Lucky/Battle Scene Assets/Minnie_Sprites.png" type="Texture" id=10]
+[ext_resource path="res://Source/Main/Girl.gd" type="Script" id=11]
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -18,3 +19,18 @@ girl_portraits = [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ]
 girl_sprites = [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 9 ) ]
 effective_moves = [ 1, 0, 2 ]
 not_effective_moves = [ 0, 2, 1 ]
+
+[node name="Erika" type="Node" parent="."]
+script = ExtResource( 11 )
+age = 21
+short_description = "This is Erika"
+
+[node name="Minnie" type="Node" parent="."]
+script = ExtResource( 11 )
+age = 24
+short_description = "This is Minnie"
+
+[node name="Hyuna" type="Node" parent="."]
+script = ExtResource( 11 )
+age = 28
+short_description = "This is Hyuna"

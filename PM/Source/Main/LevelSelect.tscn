@@ -252,13 +252,14 @@ script = ExtResource( 9 )
 
 [node name="BackGround" type="AnimatedSprite" parent="."]
 frames = SubResource( 17 )
+frame = 10
 playing = true
 centered = false
 
 [node name="SelectTitle" type="AnimatedSprite" parent="."]
 position = Vector2( 240, 36 )
 frames = SubResource( 39 )
-frame = 15
+frame = 11
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -318,7 +319,7 @@ margin_right = 116.0
 margin_bottom = 156.0
 custom_colors/font_color = Color( 0.796078, 0.301961, 0.407843, 1 )
 custom_fonts/font = SubResource( 42 )
-text = "21 y/o"
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -358,7 +359,7 @@ margin_right = 116.0
 margin_bottom = 156.0
 custom_colors/font_color = Color( 0.796078, 0.301961, 0.407843, 1 )
 custom_fonts/font = SubResource( 42 )
-text = "24 y/o"
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -398,7 +399,7 @@ margin_right = 116.0
 margin_bottom = 156.0
 custom_colors/font_color = Color( 0.796078, 0.301961, 0.407843, 1 )
 custom_fonts/font = SubResource( 42 )
-text = "28 y/o"
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -410,6 +411,7 @@ margin_bottom = 270.0
 rect_min_size = Vector2( 0, 10 )
 
 [node name="FadeInEffect" type="ColorRect" parent="."]
+visible = false
 margin_right = 480.0
 margin_bottom = 270.0
 mouse_filter = 2

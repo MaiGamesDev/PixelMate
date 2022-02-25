@@ -30,6 +30,7 @@ animations = [ {
 } ]
 
 [sub_resource type="DynamicFont" id=7]
+size = 12
 font_data = ExtResource( 2 )
 
 [node name="PlayerChat" type="Control"]
@@ -48,15 +49,13 @@ animation = "typing"
 frame = 1
 playing = true
 
-[node name="SpeechBubble" type="TextureRect" parent="."]
+[node name="SpeechBubble" type="NinePatchRect" parent="."]
 visible = false
-margin_left = 62.0
 margin_right = 226.0
 margin_bottom = 48.0
 texture = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+patch_margin_left = 12
+patch_margin_right = 44
 
 [node name="Label" type="Label" parent="SpeechBubble"]
 anchor_right = 1.0

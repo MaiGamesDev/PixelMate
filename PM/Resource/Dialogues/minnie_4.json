@@ -1,0 +1,31 @@
+{
+	"metadata": {
+		"name": "minnie_4"
+	},
+	"events": [
+		{
+			"character": "Minnie",
+			"text": "Huh.. you're a funny guy... I guess there's no harm in chatting with you.\nHave you got any plans for this Valentine's day?"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Not really...",
+					"next": "minnie_5",
+					"affection": 0
+				},
+				{
+					"text": "Probably, helping my family business.",
+					"next": "minnie_5",
+					"affection": 10
+				},
+				{
+					"text": "Dating you!",
+					"next": "minnie_6",
+					"affection": -99
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,18 @@
+{
+	"metadata": {
+		"name": "minnie_12"
+	},
+	"events": [
+		{
+			"character": "Minnie",
+			"text": "Incorrect! The correct answer is Andy Warhol!"
+		},
+		{
+			"character": "Minnie",
+			"text": "It's very nice to talk to you! I've never been this comfortable talking to someone else."
+		},
+		{
+			"character": "End"
+		}
+	]
+}

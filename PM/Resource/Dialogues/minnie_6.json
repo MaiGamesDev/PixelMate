@@ -1,0 +1,14 @@
+{
+	"metadata": {
+		"name": "minnie_6"
+	},
+	"events": [
+		{
+			"character": "Minnie",
+			"text": "Huh?!! You're weird...\n\nLet's end this conversation for the best between both of us."
+		},
+		{
+			"character": "End"
+		}
+	]
+}

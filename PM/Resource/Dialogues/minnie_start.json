@@ -5,7 +5,79 @@
 	"events": [
 		{
 			"character": "Minnie",
-			"text": "Hi Minnie here."
+			"text": "Sigh... have you got any idea what this Application is?\nSuddenly my phone just installed this strange app."
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Yeah, the same happened to me.",
+					"next": "pass",
+					"affection": 5
+				},
+				{
+					"text": "This may be a blessing for Today.",
+					"next": "minnie_4",
+					"affection": 10
+				},
+				{
+					"text": "No idea...",
+					"next": "pass",
+					"affection": 0
+				}
+			]
+		},
+		{
+			"character": "Minnie",
+			"text": "I know! Someone might have pulled a prank on us..."
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "No you might have imagined it.",
+					"next": "minnie_4",
+					"affection": -5
+				},
+				{
+					"text": "Umm...",
+					"next": "minnie_4",
+					"affection": 0
+				},
+				{
+					"text": "A prank?",
+					"next": "pass",
+					"affection": 10
+				}
+			]
+		},
+		{
+			"character": "Minnie",
+			"text": "Yeah because Today is Valentine's day!"
+		},
+		{
+			"character": "Minnie",
+			"text": "And I'm still single... same as every year..."
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "It's okay...",
+					"next": "minnie_5",
+					"affection": 10
+				},
+				{
+					"text": "Me too...",
+					"next": "minnie_5",
+					"affection": 5
+				},
+				{
+					"text": "No way, how come you're still single...",
+					"next": "minnie_4",
+					"affection": 5
+				}
+			]
 		}
 	]
 }

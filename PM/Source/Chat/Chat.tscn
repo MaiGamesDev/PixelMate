@@ -31,19 +31,23 @@ animations = [ {
 } ]
 
 [sub_resource type="DynamicFont" id=22]
+size = 12
 font_data = ExtResource( 3 )
 
 [node name="Chat" type="Control"]
 margin_right = 210.0
-margin_bottom = 54.0
+margin_bottom = 40.0
 grow_vertical = 2
-rect_min_size = Vector2( 0, 54 )
+rect_min_size = Vector2( 0, 40 )
 script = ExtResource( 4 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_horizontal_guides_": [ 40.0 ],
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 210.0 ]
 }
 
 [node name="Portrait" type="TextureRect" parent="."]
+visible = false
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_top = -27.0
@@ -55,21 +59,19 @@ __meta__ = {
 }
 
 [node name="TypingBubble" type="AnimatedSprite" parent="."]
-position = Vector2( 144, 36 )
+position = Vector2( 82, 24 )
 frames = SubResource( 12 )
 animation = "typing"
 frame = 3
 playing = true
 
-[node name="SpeechBubble" type="TextureRect" parent="."]
+[node name="SpeechBubble" type="NinePatchRect" parent="."]
 visible = false
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 62.0
-margin_top = -15.0
 margin_right = 226.0
-margin_bottom = 33.0
+margin_bottom = 48.0
 texture = ExtResource( 5 )
+patch_margin_left = 28
+patch_margin_right = 28
 __meta__ = {
 "_edit_use_anchors_": false
 }

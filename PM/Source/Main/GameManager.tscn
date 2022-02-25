@@ -14,8 +14,6 @@
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
-girl_cards = [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ]
-girl_portraits = [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ]
 girl_sprites = [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 9 ) ]
 effective_moves = [ 1, 0, 2 ]
 not_effective_moves = [ 0, 2, 1 ]
@@ -24,13 +22,21 @@ not_effective_moves = [ 0, 2, 1 ]
 script = ExtResource( 11 )
 age = 21
 short_description = "I love any movie where they spontaneously break out into song."
+card_texture = ExtResource( 4 )
+portrait_texture = ExtResource( 5 )
 
 [node name="Minnie" type="Node" parent="."]
 script = ExtResource( 11 )
 age = 24
 short_description = "I like the way little kids get grumpy and confused when they're tired."
+card_texture = ExtResource( 2 )
+portrait_texture = ExtResource( 6 )
+date_success = "HUH?!! You do really want to see me painting! I guess, I'd love to see you too! Let's meet up at my place."
+date_fail = "I guess I want to know you better."
 
 [node name="Hyuna" type="Node" parent="."]
 script = ExtResource( 11 )
 age = 28
 short_description = "I want a guy to say bless you when I sneeze."
+card_texture = ExtResource( 3 )
+portrait_texture = ExtResource( 7 )

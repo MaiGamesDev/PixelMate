@@ -1,0 +1,59 @@
+{
+	"metadata": {
+		"name": "minnie_10"
+	},
+	"events": [
+		{
+			"character": "Minnie",
+			"text": "Anyway, I've got quizzes for you! Which famous painter was also a sculptor, an architect, and an engineer?"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Pablo Picasso.",
+					"next": "minnie_12",
+					"affection": 0
+				},
+				{
+					"text": "Vincent van Gogh.",
+					"next": "minnie_12",
+					"affection": 0
+				},
+				{
+					"text": "Leonardo Da Vinci.",
+					"next": "pass",
+					"affection": 10
+				}
+			]
+		},
+		{
+			"character": "Minnie",
+			"text": ":) very good!"
+		},
+		{
+			"character": "Minnie",
+			"text": "Next one, which one is the famous painter of the “Lady With a Pearl Earring” that appears in the Mr.Bean movie?"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Claude Monet.",
+					"next": "minnie_15",
+					"affection": 0
+				},
+				{
+					"text": "Erik Satie.",
+					"next": "minnie_15",
+					"affection": 0
+				},
+				{
+					"text": "Johannes Vermeer.",
+					"next": "minnie_14",
+					"affection": 10
+				}
+			]
+		}
+	]
+}

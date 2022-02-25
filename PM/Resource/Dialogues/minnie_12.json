@@ -1,0 +1,35 @@
+{
+	"metadata": {
+		"name": "minnie_12"
+	},
+	"events": [
+		{
+			"character": "Minnie",
+			"text": "Close… but the correct answer is Leonardo Da Vinci."
+		},
+		{
+			"character": "Minnie",
+			"text": "Next one, which one is the famous painter of the \"Lady With a Pearl Earring\" that appears in the Mr.Bean movie?"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Claude Monet.",
+					"next": "minnie_15",
+					"affection": 0
+				},
+				{
+					"text": "Erik Satie.",
+					"next": "minnie_15",
+					"affection": 0
+				},
+				{
+					"text": "Johannes Vermeer.",
+					"next": "minnie_14",
+					"affection": 10
+				}
+			]
+		}
+	]
+}

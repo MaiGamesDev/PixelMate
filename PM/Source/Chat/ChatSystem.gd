@@ -2,6 +2,7 @@ extends Node
 
 export(PackedScene) var chat_scene
 export(PackedScene) var player_chat_scene
+export(String, MULTILINE) var date_her_text
 
 var dialogues = []
 var current_index = 0
@@ -11,12 +12,14 @@ var current_affection = 0
 var current_dialogue
 var girl_portrait
 var player_chat
+var next_scene_path
 
 onready var timer = $Timer
 
 onready var scrollcon = $ChatArea
 onready var chat_area = $ChatArea/VBoxContainer
 
+onready var date_button = $DateButton
 onready var first_choice = $ChoiceButtons/FirstChoice
 onready var second_choice = $ChoiceButtons/SecondChoice
 onready var third_choice = $ChoiceButtons/ThirdChoice
@@ -28,6 +31,12 @@ func _ready() -> void:
 	
 	$GirlCard/TextureRect.texture = GameManager.get_card_texture()
 	girl_portrait = GameManager.get_portrait_texture()
+	
+	var text = String(GameManager.get_girl_age()) + " y/o\n"
+	text += String(GameManager.get_girl_description())
+	
+	$GirlCard/Label.text = text
+	
 	init(GameManager.get_dialogue_start())
 
 func init(dialogue_file):
@@ -43,7 +52,9 @@ func init(dialogue_file):
 
 func show_dialogue():
 	if not current_index >= len(dialogues["events"]):
-		if dialogues["events"][current_index]["character"] == "Player":
+		if dialogues["events"][current_index]["character"] == "End":
+			date_button.visible = true;
+		elif dialogues["events"][current_index]["character"] == "Player":
 			player_chat = player_chat_scene.instance()
 			chat_area.add_child(player_chat)
 			update_scroll()
@@ -62,7 +73,7 @@ func show_dialogue():
 			current_dialogue = dialogues["events"][current_index]["text"]
 			
 			if skip_line == 0:
-				timer.start(current_dialogue.length() * 0.1)
+				timer.start(current_dialogue.length() * 0.05)
 				yield(timer, "timeout")
 			
 			chat_object.update_text(current_dialogue, skip_line)
@@ -79,11 +90,15 @@ func show_dialogue():
 				show_dialogue()
 
 func enable_buttons():
+	date_button.visible = true;
+	
 	first_choice.disabled = false;
 	second_choice.disabled = false;
 	third_choice.disabled = false;
 
 func disable_buttons():
+	date_button.visible = false;
+	
 	first_choice.disabled = true;
 	second_choice.disabled = true;
 	third_choice.disabled = true;
@@ -93,6 +108,7 @@ func disable_buttons():
 	third_choice.get_node("Label").text = ""
 
 func update_scroll():
+	yield(get_tree(), "idle_frame")
 	yield(get_tree(), "idle_frame")
 	scrollcon.set_v_scroll(scrollcon.get_v_scrollbar().max_value)
 
@@ -115,23 +131,96 @@ func check_next(next):
 			var next_dialogue = "res://Resource/Dialogues/" + next + ".json"
 			init(next_dialogue)
 
+func next_scene():
+	get_tree().change_scene(next_scene_path)
+
+func _on_DateButton_pressed() -> void:
+	disable_buttons()
+	
+	if player_chat == null:
+		player_chat = player_chat_scene.instance()
+		chat_area.add_child(player_chat)
+	
+	player_chat.update_text(date_her_text)
+	update_scroll()
+	
+	timer.start(1)
+	yield(timer, "timeout")
+	
+	var chat_object = chat_scene.instance()
+	chat_object.init(girl_portrait)
+	chat_area.add_child(chat_object)
+	update_scroll()
+	
+	var dating
+	if current_affection < 80:
+		dating = false
+		current_dialogue = GameManager.get_girl_fail()
+	else:
+		dating = true
+		current_dialogue = GameManager.get_girl_success()
+	
+	timer.start(current_dialogue.length() * 0.05)
+	yield(timer, "timeout")
+	
+	skip_line = 0
+	chat_object.update_text(current_dialogue, skip_line)
+	
+	while not chat_object.is_shown_all():
+		skip_line += chat_object.get_max_line()
+		
+		chat_object = chat_scene.instance()
+		chat_object.init(girl_portrait)
+		chat_area.add_child(chat_object)
+		update_scroll()
+	
+		chat_object.update_text(current_dialogue, skip_line)
+		
+	timer.start(current_dialogue.length() * 0.1)
+	yield(timer, "timeout")
+	
+	if dating:
+		next_scene_path = "res://Source/Battle/BattleScene.tscn"
+		$AnimationPlayer.play("fadeout")
+	else:
+		next_scene_path = "res://Source/Main/GameOver.tscn"
+		$AnimationPlayer.play("fadeout")
+
 func _on_FirstChoice_pressed() -> void:
 	disable_buttons()
 	player_chat.update_text(dialogues["events"][current_index]["choices"][0]["text"], 0)
 	
 	check_affection(dialogues["events"][current_index]["choices"][0]["affection"])
+	
+	timer.start(1)
+	yield(timer, "timeout")
+	
 	check_next(dialogues["events"][current_index]["choices"][0]["next"])
+	
+	player_chat = null
 
 func _on_SecondChoice_pressed() -> void:
 	disable_buttons()
 	player_chat.update_text(dialogues["events"][current_index]["choices"][1]["text"], 0)
 	
 	check_affection(dialogues["events"][current_index]["choices"][1]["affection"])
+	
+	timer.start(1)
+	yield(timer, "timeout")
+	
 	check_next(dialogues["events"][current_index]["choices"][1]["next"])
+	
+	player_chat = null
 
 func _on_ThirdChoice_pressed() -> void:
 	disable_buttons()
 	player_chat.update_text(dialogues["events"][current_index]["choices"][2]["text"], 0)
 	
 	check_affection(dialogues["events"][current_index]["choices"][2]["affection"])
+	
+	timer.start(1)
+	yield(timer, "timeout")
+	
 	check_next(dialogues["events"][current_index]["choices"][2]["next"])
+	
+	player_chat = null

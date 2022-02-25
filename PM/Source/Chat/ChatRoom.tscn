@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Source/Chat/Chat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Source/Chat/PlayerChat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Art/Lucky/Chat Room Assets/DateButton.png" type="Texture" id=3]
 [ext_resource path="res://Art/Lucky/Chat Room Assets/optionButton.png" type="Texture" id=4]
 [ext_resource path="res://Art/Lucky/Chat Room Assets/AffectionMeter_progress.png" type="Texture" id=5]
+[ext_resource path="res://Art/Lucky/Chat Room Assets/ScrollBar-export.png" type="Texture" id=6]
 [ext_resource path="res://Art/Lucky/Chat Room Assets/DateButton2.png" type="Texture" id=7]
 [ext_resource path="res://Art/Lucky/Chat Room Assets/ChatRoomBackgroun Straight 2x.png" type="Texture" id=8]
 [ext_resource path="res://Art/Lucky/Chat Room Assets/optionButton2.png" type="Texture" id=9]
@@ -17,6 +18,7 @@
 [ext_resource path="res://Art/Lucky/Level Select Assets/Erika Card 200x.png" type="Texture" id=21]
 
 [sub_resource type="DynamicFont" id=18]
+size = 14
 font_data = ExtResource( 20 )
 
 [sub_resource type="StyleBoxEmpty" id=19]
@@ -24,8 +26,63 @@ font_data = ExtResource( 20 )
 [sub_resource type="Theme" id=20]
 VScrollBar/styles/scroll = SubResource( 19 )
 
-[sub_resource type="DynamicFont" id=21]
+[sub_resource type="StyleBoxTexture" id=25]
+texture = ExtResource( 6 )
+region_rect = Rect2( 12, 0, 10, 12 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=26]
+texture = ExtResource( 6 )
+region_rect = Rect2( 24, 0, 10, 12 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=27]
+texture = ExtResource( 6 )
+region_rect = Rect2( 24, 0, 10, 12 )
+
+[sub_resource type="StyleBoxTexture" id=28]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 10, 36 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id=29]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 10, 36 )
+
+[sub_resource type="Theme" id=30]
+VScrollBar/styles/grabber = SubResource( 25 )
+VScrollBar/styles/grabber_highlight = SubResource( 26 )
+VScrollBar/styles/grabber_pressed = SubResource( 27 )
+VScrollBar/styles/scroll = SubResource( 28 )
+VScrollBar/styles/scroll_focus = SubResource( 29 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 12
 font_data = ExtResource( 20 )
+
+[sub_resource type="Animation" id=24]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("FadeEffect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=17]
 resource_name = "fadein"
@@ -54,10 +111,40 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
+[sub_resource type="Animation" id=23]
+resource_name = "fadeout"
+tracks/0/type = "value"
+tracks/0/path = NodePath("FadeEffect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "next_scene"
+} ]
+}
+
 [node name="ChatRoom" type="Node"]
 script = ExtResource( 18 )
 chat_scene = ExtResource( 1 )
 player_chat_scene = ExtResource( 2 )
+date_her_text = "Do you want to meet up?"
 
 [node name="Background" type="Sprite" parent="."]
 texture = ExtResource( 8 )
@@ -106,12 +193,13 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="GirlCard"]
-margin_left = 16.0
-margin_top = 84.0
-margin_right = 116.0
+margin_left = 17.0
+margin_top = 83.0
+margin_right = 115.0
 margin_bottom = 166.0
 custom_colors/font_color = Color( 0.796078, 0.301961, 0.407843, 1 )
 custom_fonts/font = SubResource( 18 )
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -178,19 +266,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ChoiceButtons/FirstChoice"]
+[node name="Label" type="RichTextLabel" parent="ChoiceButtons/FirstChoice"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
+margin_left = 7.0
 margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -6.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 21 )
-align = 1
-valign = 1
-autowrap = true
-clip_text = true
+mouse_filter = 1
+theme = SubResource( 30 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -215,19 +301,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ChoiceButtons/SecondChoice"]
+[node name="Label" type="RichTextLabel" parent="ChoiceButtons/SecondChoice"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
+margin_left = 7.0
 margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -6.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 21 )
-align = 1
-valign = 1
-autowrap = true
-clip_text = true
+mouse_filter = 1
+theme = SubResource( 30 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -252,26 +336,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ChoiceButtons/ThirdChoice"]
+[node name="Label" type="RichTextLabel" parent="ChoiceButtons/ThirdChoice"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
+margin_left = 7.0
 margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -6.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 21 )
-align = 1
-valign = 1
-autowrap = true
-clip_text = true
+mouse_filter = 1
+theme = SubResource( 30 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "fadein"
+anims/RESET = SubResource( 24 )
 anims/fadein = SubResource( 17 )
+anims/fadeout = SubResource( 23 )
 
 [node name="FadeEffect" type="ColorRect" parent="."]
 visible = false
@@ -285,6 +369,7 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+[connection signal="pressed" from="DateButton" to="." method="_on_DateButton_pressed"]
 [connection signal="pressed" from="ChoiceButtons/FirstChoice" to="." method="_on_FirstChoice_pressed"]
 [connection signal="pressed" from="ChoiceButtons/SecondChoice" to="." method="_on_SecondChoice_pressed"]
 [connection signal="pressed" from="ChoiceButtons/ThirdChoice" to="." method="_on_ThirdChoice_pressed"]

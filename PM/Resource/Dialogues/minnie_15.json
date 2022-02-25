@@ -1,0 +1,46 @@
+{
+	"metadata": {
+		"name": "minnie_14"
+	},
+	"events": [
+		{
+			"character": "Minnie",
+			"text": "You almost got it! The correct answer is Johannes Vermeer."
+		},
+		{
+			"character": "Minnie",
+			"text": "Okay last one! Which famous painter is often associated with Pop Art?"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Andy Warhol.",
+					"next": "pass",
+					"affection": 10
+				},
+				{
+					"text": "Vincent Van Gogh.",
+					"next": "minnie_18",
+					"affection": 0
+				},
+				{
+					"text": "Hendra Gunawan.",
+					"next": "minnie_18",
+					"affection": 0
+				}
+			]
+		},
+		{
+			"character": "Minnie",
+			"text": "WOW! you must have liked art so much!"
+		},
+		{
+			"character": "Minnie",
+			"text": "It's very nice to talk to you! I've never been this comfortable talking to someone else."
+		},
+		{
+			"character": "End"
+		}
+	]
+}

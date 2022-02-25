@@ -24,8 +24,6 @@ enum GIRL_MOVE {
 	IGNORE
 }
 
-export(Array, Texture) var girl_cards
-export(Array, Texture) var girl_portraits
 export(Array, Texture) var girl_sprites
 
 export(Array, MOVE) var effective_moves
@@ -52,10 +50,10 @@ func get_dialogue_start() -> String:
 			return erika_dialogue_start
 
 func get_card_texture() -> Texture:
-	return girl_cards[selected_girl]
+	return girls[selected_girl].card_texture
 
 func get_portrait_texture() -> Texture:
-	return girl_portraits[selected_girl]
+	return girls[selected_girl].portrait_texture
 
 func get_girl_name() -> String:
 	match selected_girl:
@@ -82,6 +80,18 @@ func get_girl_move() -> int:
 
 func get_age(girl) -> int:
 	return girls[girl].age
-	
+
+func get_girl_age() -> int:
+	return get_age(selected_girl)
+
 func get_description(girl) -> int:
 	return girls[girl].short_description
+
+func get_girl_description() -> int:
+	return get_description(selected_girl)
+
+func get_girl_success() -> String:
+	return girls[selected_girl].date_success
+
+func get_girl_fail() -> String:
+	return girls[selected_girl].date_fail

@@ -7,7 +7,7 @@ onready var message = $SpeechBubble/Label
 func init(texture):
 	$Portrait.texture = texture
 
-func update_text(dialogue, skip_line):
+func update_text(dialogue, skip_line = 0):
 	typing_bubble.visible = false
 	bubble.visible = true
 	message.text = dialogue

@@ -1,0 +1,107 @@
+{
+	"metadata": {
+		"name": "minnie_5"
+	},
+	"events": [
+		{
+			"character": "Minnie",
+			"text": "Yeah..."
+		},
+		{
+			"character": "Minnie",
+			"text": "Valentine's day means that I can spend my free time working on my art!"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Art? What did you draw?",
+					"next": "pass",
+					"affection": 10
+				},
+				{
+					"text": "Yeah, Valentine's day is overrated",
+					"next": "pass",
+					"affection": -5
+				},
+				{
+					"text": "Hey I love doing arts too on Valentine's day!",
+					"next": "pass",
+					"affection": 5
+				}
+			]
+		},
+		{
+			"character": "Minnie",
+			"text": "I love painting landscapes that depict our current world's situation..."
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "World's situation?",
+					"next": "pass",
+					"affection": 5
+				},
+				{
+					"text": "Yup, greed has taken over us...",
+					"next": "pass",
+					"affection": 10
+				},
+				{
+					"text": "Wow... I love it! I'd like to see it!",
+					"next": "minnie_10",
+					"affection": 0
+				}
+			]
+		},
+		{
+			"character": "Minnie",
+			"text": "\nYeah... human rights violations,\nworld disasters and wars are all happening in our eyes..."
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Yup, we should've been more united.",
+					"next": "pass",
+					"affection": 5
+				},
+				{
+					"text": "Those are terrible but they are important to be painted!",
+					"next": "pass",
+					"affection": 10
+				},
+				{
+					"text": "You're weird...",
+					"next": "minnie_10",
+					"affection": -10
+				}
+			]
+		},
+		{
+			"character": "Minnie",
+			"text": "Hehe... thanks, it was nice to find someone who understands it.\nAnyway, we should've lightened up the situation :)"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Yes, it's good to find someone that has the same frequency.",
+					"next": "minnie_10",
+					"affection": 10
+				},
+				{
+					"text": "Yes, let's change the topic.",
+					"next": "minnie_10",
+					"affection": 5
+				},
+				{
+					"text": "No! We should discuss this further!",
+					"next": "minnie_6",
+					"affection": -99
+				}
+			]
+		}
+	]
+}

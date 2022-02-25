@@ -1,15 +1,12 @@
 extends Node
 
+onready var player = $AnimationPlayer
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+func play_intro():
+	player.play("intro")
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$AnimationPlayer.play("intro")
-
+func next_scene():
+	get_tree().change_scene("res://Source/Main/MainMenu.tscn")
 
 func _on_MainMenu_button_up():
-	get_tree().change_scene("res://Source/Main/MainMenu.tscn")
+	player.play("fadeout")

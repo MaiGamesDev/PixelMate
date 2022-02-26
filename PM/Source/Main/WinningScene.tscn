@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Source/Main/Button.gd" type="Script" id=1]
 [ext_resource path="res://Resource/Font/monogram.ttf" type="DynamicFontData" id=2]
@@ -14,6 +14,79 @@
 [ext_resource path="res://Art/Lucky/Winning Ending Scene Assets/Ending Panel 5.png" type="Texture" id=12]
 [ext_resource path="res://Sound/SFX/Heart_beat.wav" type="AudioStream" id=13]
 [ext_resource path="res://Sound/SFX/Clock_alarm.wav" type="AudioStream" id=14]
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("FadeEffect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "fadein"
+tracks/0/type = "value"
+tracks/0/path = NodePath("FadeEffect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_intro"
+} ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "fadeout"
+tracks/0/type = "value"
+tracks/0/path = NodePath("FadeEffect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "next_scene"
+} ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "intro"
@@ -144,29 +217,39 @@ texture = ExtResource( 11 )
 centered = false
 
 [node name="Panel" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 10 )
 centered = false
 
 [node name="Panel2" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 7 )
 centered = false
 
 [node name="Panel3" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 8 )
 centered = false
 
 [node name="Panel4" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 4 )
 centered = false
 
 [node name="Panel5" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 12 )
 centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "fadein"
+anims/RESET = SubResource( 4 )
+anims/fadein = SubResource( 5 )
+anims/fadeout = SubResource( 6 )
 anims/intro = SubResource( 2 )
 
 [node name="MainMenu" type="TextureButton" parent="."]
+visible = false
 margin_left = 405.0
 margin_top = 224.0
 margin_right = 469.0
@@ -195,5 +278,13 @@ __meta__ = {
 
 [node name="Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
+
+[node name="FadeEffect" type="ColorRect" parent="."]
+margin_right = 480.0
+margin_bottom = 270.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="button_up" from="MainMenu" to="." method="_on_MainMenu_button_up"]

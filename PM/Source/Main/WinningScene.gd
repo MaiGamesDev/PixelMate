@@ -1,5 +1,10 @@
 extends Node
 
-func _on_MainMenu_button_up():
-	yield(get_tree().create_timer(0.15),"timeout")
+func play_intro():
+	$AnimationPlayer.play("intro")
+
+func next_scene():
 	get_tree().change_scene("res://Source/Main/MainMenu.tscn")
+
+func _on_MainMenu_button_up():
+	$AnimationPlayer.play("fadeout")

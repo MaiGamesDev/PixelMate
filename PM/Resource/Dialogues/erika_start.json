@@ -17,12 +17,12 @@
 				{
 					"text": "Hello!",
 					"next": "erika_2",
-					"affection": 5
+					"affection": 10
 				},
 				{
 					"text": "Hi, I'm a 36-year-old divorced man.",
 					"next": "pass",
-					"affection": 5
+					"affection": 10
 				},
 				{
 					"text": "Whatsup.",

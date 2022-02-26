@@ -114,6 +114,11 @@ func update_scroll():
 	scrollcon.set_v_scroll(scrollcon.get_v_scrollbar().max_value)
 
 func check_affection(affection):
+	if affection > 0:
+		play_gage_up_sound()
+	if affection < 0:
+		play_gage_down_sound()
+	
 	current_affection += affection
 	
 	if(current_affection < 0):
@@ -199,6 +204,18 @@ func _on_DateButton_pressed() -> void:
 	else:
 		next_scene_path = "res://Source/Main/GameOver.tscn"
 		$AnimationPlayer.play("fadeout")
+
+func play_gage_up_sound():
+	var sound = load("res://Source/Audio/SoundPlayer.tscn").instance()
+	sound.stream = load("res://Sound/SFX/Gage_up.wav")
+	
+	add_child(sound)
+	
+func play_gage_down_sound():
+	var sound = load("res://Source/Audio/SoundPlayer.tscn").instance()
+	sound.stream = load("res://Sound/SFX/Gage_down.wav")
+	
+	add_child(sound)
 
 func _on_FirstChoice_pressed() -> void:
 	disable_buttons()

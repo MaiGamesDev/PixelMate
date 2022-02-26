@@ -42,7 +42,6 @@ rect_min_size = Vector2( 0, 40 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 40.0 ],
-"_edit_use_anchors_": false,
 "_edit_vertical_guides_": [ 210.0 ]
 }
 
@@ -62,7 +61,6 @@ __meta__ = {
 position = Vector2( 82, 24 )
 frames = SubResource( 12 )
 animation = "typing"
-frame = 3
 playing = true
 
 [node name="SpeechBubble" type="NinePatchRect" parent="."]

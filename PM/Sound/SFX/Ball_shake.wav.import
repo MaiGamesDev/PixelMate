@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Ball_shake.wav-088134e93861c9feca19544505e417da.sample"
+
+[deps]
+
+source_file="res://Sound/SFX/Ball_shake.wav"
+dest_files=[ "res://.import/Ball_shake.wav-088134e93861c9feca19544505e417da.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

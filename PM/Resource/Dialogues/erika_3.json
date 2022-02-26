@@ -21,12 +21,12 @@
 				{
 					"text": "Is that guy handsome?",
 					"next": "pass",
-					"affection": 0
+					"affection": -5
 				},
 				{
 					"text": "That's too bad.",
 					"next": "erika_4",
-					"affection": 15
+					"affection": 20
 				},
 				{
 					"text": "Just do what they say, breaking parents' word is bad.",

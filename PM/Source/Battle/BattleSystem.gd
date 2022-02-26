@@ -62,6 +62,7 @@ func play_turn():
 	var text = ""
 	var girl_move = GameManager.get_girl_move()
 	
+	play_skill_sound()
 	battle_container.hide()
 	
 	match move:
@@ -154,6 +155,7 @@ func apply_damage(value):
 		girl_health = 0
 	
 	girl_hp_bar.value = girl_health
+	play_hurt_sound()
 
 func get_damage(value):
 	var damage = rng.randf_range(value * 0.75, value * 1.25)
@@ -163,6 +165,7 @@ func get_damage(value):
 		health = 0
 	
 	hp_bar.value = health
+	play_hurt_sound()
 
 func catch():
 	var m = rng.randi_range(0, 255)
@@ -170,6 +173,7 @@ func catch():
 	var health_thres = 100 - GameManager.get_girl_affection()
 	var f = (100 * 255 * health_thres) / (girl_health * 100)
 	
+	play_throw_sound()
 	capsule_player.play("catch")
 	yield(capsule_player, "animation_finished")
 	
@@ -177,23 +181,67 @@ func catch():
 		catched = true
 		
 		for i in 3:
+			play_shake_sound()
 			capsule_player.play("shake")
 			yield(capsule_player, "animation_finished")
 		
+		play_win_sound()
 		capsule_player.play("success")
 		yield(capsule_player, "animation_finished")
 	else:
 		var shakes = rng.randi_range(0, 3)
 		
 		for i in shakes:
+			play_shake_sound()
 			capsule_player.play("shake")
 			yield(capsule_player, "animation_finished")
 		
+		play_fail_sound()
 		capsule_player.play("fail")
 		yield(capsule_player, "animation_finished")
 
 func next_scene():
 	get_tree().change_scene(next_scene_path)
+
+func play_hurt_sound():
+	var sound = load("res://Source/Audio/SoundPlayer.tscn").instance()
+	sound.stream = load("res://Sound/SFX/Hurt.mp3")
+	
+	add_child(sound)
+	
+func play_skill_sound():
+	var sound = load("res://Source/Audio/SoundPlayer.tscn").instance()
+	sound.stream = load("res://Sound/SFX/Gage_up.wav")
+	
+	add_child(sound)
+	
+func play_throw_sound():
+	var sound = load("res://Source/Audio/SoundPlayer.tscn").instance()
+	sound.stream = load("res://Sound/SFX/Ball_throw.wav")
+	
+	add_child(sound)
+	
+func play_shake_sound():
+	var sound = load("res://Source/Audio/SoundPlayer.tscn").instance()
+	sound.stream = load("res://Sound/SFX/Ball_shake.wav")
+	
+	add_child(sound)
+	
+func play_fail_sound():
+	var sound = load("res://Source/Audio/SoundPlayer.tscn").instance()
+	sound.stream = load("res://Sound/SFX/Catch_fail.wav")
+	
+	add_child(sound)
+	
+func play_win_sound():
+	var sound = load("res://Source/Audio/SoundPlayer.tscn").instance()
+	sound.stream = load("res://Sound/SFX/Gotcha.wav")
+	
+	var sound2 = load("res://Source/Audio/SoundPlayer.tscn").instance()
+	sound2.stream = load("res://Sound/SFX/You_win.mp3")
+	
+	add_child(sound)
+	add_child(sound2)
 
 func _on_Flirt_pressed() -> void:
 	move = GameManager.MOVE.FLIRT

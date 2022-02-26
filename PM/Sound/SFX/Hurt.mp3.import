@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Hurt.mp3-b2be94d7dcb4ae4fa09ca9be7b63cfe4.mp3str"
+
+[deps]
+
+source_file="res://Sound/SFX/Hurt.mp3"
+dest_files=[ "res://.import/Hurt.mp3-b2be94d7dcb4ae4fa09ca9be7b63cfe4.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

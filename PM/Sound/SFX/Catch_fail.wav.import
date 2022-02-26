@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Catch_fail.wav-069ceac56d5fd9ec218f5c66a339a422.sample"
+
+[deps]
+
+source_file="res://Sound/SFX/Catch_fail.wav"
+dest_files=[ "res://.import/Catch_fail.wav-069ceac56d5fd9ec218f5c66a339a422.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

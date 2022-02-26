@@ -18,6 +18,8 @@ func _ready():
 	connect("button_up",self,"_on_button_up")
 
 func _on_button_down():
+	play_pressed_sound()
+	
 	if texture != null:
 		texture.rect_position.y = texture_origin_y + pressed_space
 	if label != null:
@@ -41,3 +43,9 @@ func _on_button_up():
 		texture.rect_position.y = texture_origin_y
 	if label != null:
 		label.rect_position.y = label_origin_y
+		
+func play_pressed_sound():
+	var sound = load("res://Source/Audio/SoundPlayer.tscn").instance()
+	sound.stream = load("res://Sound/SFX/Button_Pressed.wav")
+	
+	add_child(sound)

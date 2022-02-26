@@ -75,8 +75,7 @@ func show_dialogue():
 			current_dialogue = dialogues["events"][current_index]["text"]
 			
 			if skip_line == 0:
-				timer.start(current_dialogue.length() * 0.05)
-				yield(timer, "timeout")
+				yield(wait(current_dialogue.length() * 0.05), "completed")
 			
 			chat_object.update_text(current_dialogue, skip_line)
 			
@@ -142,6 +141,13 @@ func check_next(next):
 func next_scene():
 	get_tree().change_scene(next_scene_path)
 
+func wait(time):
+	if time < 1:
+		time = 1
+	
+	timer.start(time)
+	yield(timer, "timeout")
+
 func _on_DateButton_pressed() -> void:
 	disable_buttons()
 	
@@ -155,34 +161,34 @@ func _on_DateButton_pressed() -> void:
 	timer.start(1)
 	yield(timer, "timeout")
 	
-	var chat_object = chat_scene.instance()
-	chat_object.init(girl_portrait)
-	chat_area.add_child(chat_object)
-	update_scroll()
-	
 	var dating
+	var index = 0
 	if current_affection < GameManager.get_girl_affection():
 		dating = false
-		current_dialogue = GameManager.get_girl_fail()
+		current_dialogue = GameManager.get_girl_fail(index)
 	else:
 		dating = true
-		current_dialogue = GameManager.get_girl_success()
+		current_dialogue = GameManager.get_girl_success(index)
 	
-	timer.start(current_dialogue.length() * 0.05)
-	yield(timer, "timeout")
-	
-	skip_line = 0
-	chat_object.update_text(current_dialogue, skip_line)
-	
-	while not chat_object.is_shown_all():
-		skip_line += chat_object.get_max_line()
+	var dialogue = current_dialogue
+	while not dialogue == "":
+		current_dialogue = dialogue
 		
-		chat_object = chat_scene.instance()
+		var chat_object = chat_scene.instance()
 		chat_object.init(girl_portrait)
 		chat_area.add_child(chat_object)
 		update_scroll()
+		
+		timer.start(current_dialogue.length() * 0.08)
+		yield(timer, "timeout")
+		
+		chat_object.update_text(current_dialogue)
 	
-		chat_object.update_text(current_dialogue, skip_line)
+		index += 1
+		if dating:
+			dialogue = GameManager.get_girl_success(index)
+		else:
+			dialogue = GameManager.get_girl_fail(index)
 		
 	timer.start(current_dialogue.length() * 0.08)
 	yield(timer, "timeout")

@@ -5,7 +5,15 @@
 	"events": [
 		{
 			"character": "Erika",
-			"text": "My parents are really strict. The most terrifying thing is them trying to marry me with a stranger. They just said that he's the vice president of a famous  major company."
+			"text": "My parents are really strict."
+		},
+		{
+			"character": "Erika",
+			"text": "The most terrifying thing is them trying to marry me with a stranger."
+		},
+		{
+			"character": "Erika",
+			"text": "They just said that he's the vice president of a famous  major company."
 		},
 		{
 			"character": "Player",
@@ -29,7 +37,11 @@
 		},
 		{
 			"character": "Erika",
-			"text": "Uhhh, I don't really know him."
+			"text": "Uhhh"
+		},
+		{
+			"character": "Erika",
+			"text": "I don't really know him."
 		},
 		{
 			"character": "Erika",
@@ -37,7 +49,11 @@
 		},
 		{
 			"character": "Erika",
-			"text": "That's why I installed this app! To find a nice man, also someone my parents will like... I hope so. By the way, why did you install this app?"
+			"text": "That's why I installed this app! To find a nice man, also someone my parents will like... I hope so."
+		},
+		{
+			"character": "Erika",
+			"text": "By the way, why did you install this app?"
 		},
 		{
 			"character": "Player",

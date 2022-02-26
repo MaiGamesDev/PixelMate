@@ -1,11 +1,139 @@
 {
 	"metadata": {
-		"name": "hyuna"
+		"name": "hyuna_start"
 	},
 	"events": [
 		{
 			"character": "Hyuna",
-			"text": "Hyuna"
+			"text": "?"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Hmmm...?",
+					"next": "pass",
+					"affection": 5
+				},
+				{
+					"text": "Hi!",
+					"next": "pass",
+					"affection": 0
+				},
+				{
+					"text": "^.^",
+					"next": "pass",
+					"affection": 5
+				}
+			]
+		},
+		{
+			"character": "Hyuna",
+			"text": "Hi?..."
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Hi!",
+					"next": "pass",
+					"affection": 0
+				},
+				{
+					"text": "I'm just a stranger. What about you?",
+					"next": "pass",
+					"affection": 0
+				},
+				{
+					"text": "(- o -)/",
+					"next": "pass",
+					"affection": 5
+				}
+			]
+		},
+		{
+			"character": "Hyuna",
+			"text": "I guess you already know my name..."
+		},
+		{
+			"character": "Hyuna",
+			"text": "I never remember I have this App."
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Me too!",
+					"next": "hyuna_4",
+					"affection": 5
+				},
+				{
+					"text": "You must be forgetful!",
+					"next": "pass",
+					"affection": -5
+				},
+				{
+					"text": "Did you remember something strange that happened?",
+					"next": "pass",
+					"affection": 10
+				}
+			]
+		},
+		{
+			"character": "Hyuna",
+			"text": "I remember my phone made this strange sound."
+		},
+		{
+			"character": "Hyuna",
+			"text": "Did an alien contact me (O.O)?"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Maybe...",
+					"next": "pass",
+					"affection": 0
+				},
+				{
+					"text": "Alien ?!!",
+					"next": "pass",
+					"affection": 5
+				},
+				{
+					"text": "Me too! A loud sound just appears out of nowhere",
+					"next": "hyuna_4",
+					"affection": 5
+				}
+			]
+		},
+		{
+			"character": "Hyuna",
+			"text": "Hehe.. I'm just joking!"
+		},
+		{
+			"character": "Hyuna",
+			"text": "Or... is it you that hacked my phone?! (O.O)"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Haha... I'd like to if I can",
+					"next": "hyuna_8",
+					"affection": 5
+				},
+				{
+					"text": "No! Of course not!",
+					"next": "hyuna_8",
+					"affection": -10
+				},
+				{
+					"text": "Haha... how did you know!",
+					"next": "hyuna_8",
+					"affection": 5
+				}
+			]
 		}
 	]
 }

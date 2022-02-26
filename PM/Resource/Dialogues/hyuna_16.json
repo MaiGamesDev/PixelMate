@@ -1,0 +1,39 @@
+{
+	"metadata": {
+		"name": "hyuna_16"
+	},
+	"events": [
+		{
+			"character": "Hyuna",
+			"text": "Wrong! But no problem, that one is hard"
+		},
+		{
+			"character": "Hyuna",
+			"text": "Ok! Last one!"
+		},
+		{
+			"character": "Hyuna",
+			"text": "What is your zodiac sign?"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Pisces",
+					"next": "hyuna_18",
+					"affection": 10
+				},
+				{
+					"text": "Libra",
+					"next": "hyuna_19",
+					"affection": 0
+				},
+				{
+					"text": "Taurus",
+					"next": "hyuna_18",
+					"affection": 16
+				}
+			]
+		}
+	]
+}

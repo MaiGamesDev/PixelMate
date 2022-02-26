@@ -1,0 +1,43 @@
+{
+	"metadata": {
+		"name": "hyuna_9"
+	},
+	"events": [
+		{
+			"character": "Hyuna",
+			"text": "Haha I do love Horoscopes..."
+		},
+		{
+			"character": "Hyuna",
+			"text": "I know it's superficial"
+		},
+		{
+			"character": "Hyuna",
+			"text": "But it sometimes gives great advice!"
+		},
+		{
+			"character": "Hyuna",
+			"text": "Let me teach you a bit about it!"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Of course! I'd love to hear about it",
+					"next": "hyuna_11",
+					"affection": 5
+				},
+				{
+					"text": "Ok",
+					"next": "hyuna_11",
+					"affection": -5
+				},
+				{
+					"text": "\\(^o^)/",
+					"next": "hyuna_11",
+					"affection": 10
+				}
+			]
+		}
+	]
+}

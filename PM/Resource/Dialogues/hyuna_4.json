@@ -1,0 +1,55 @@
+{
+	"metadata": {
+		"name": "hyuna_4"
+	},
+	"events": [
+		{
+			"character": "Hyuna",
+			"text": "How are you staying busy during these times?"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "I'm picking up all sorts of weird hobbies",
+					"next": "pass",
+					"affection": 5
+				},
+				{
+					"text": "I mainly help my parents. What about you?",
+					"next": "hyuna_8",
+					"affection": 0
+				},
+				{
+					"text": "(-.-) zzz",
+					"next": "hyuna_8",
+					"affection": -5
+				}
+			]
+		},
+		{
+			"character": "Hyuna",
+			"text": "Haha... Weird Hobbies? I guess I did too."
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Yes I learnt gardening during these times",
+					"next": "hyuna_8",
+					"affection": 5
+				},
+				{
+					"text": "Yes I played too much video games",
+					"next": "hyuna_8",
+					"affection": -5
+				},
+				{
+					"text": "Yes I read a lot of books about Astrophysics",
+					"next": "hyuna_8",
+					"affection": 10
+				}
+			]
+		}
+	]
+}

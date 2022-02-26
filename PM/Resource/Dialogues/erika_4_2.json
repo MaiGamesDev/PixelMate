@@ -9,7 +9,11 @@
 		},
 		{
 			"character": "Erika",
-			"text": "It was nice talking with you! Do you have anything more to say to me?"
+			"text": "It was nice talking with you!"
+		},
+		{
+			"character": "Erika",
+			"text": "Do you have anything more to say to me?"
 		},
 		{
 			"character": "End"

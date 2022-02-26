@@ -1,0 +1,17 @@
+{
+	"metadata": {
+		"name": "hyuna_18"
+	},
+	"events": [
+		{
+			"character": "Hyuna",
+			"text": "I knew it! You're compatible with me"
+		},{
+			"character": "Hyuna",
+			"text": "?! I meant our zodiac sign!"
+		},
+		{
+			"character": "End"
+		}
+	]
+}

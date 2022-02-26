@@ -15,8 +15,8 @@ export(Texture) var portrait_texture
 export(Texture) var sprite_texture
 
 export(int, 100) var affection_threshold
-export(String, MULTILINE) var date_success
-export(String, MULTILINE) var date_fail
+export(Array, String, MULTILINE) var date_success
+export(Array, String, MULTILINE) var date_fail
 
 export(MOVE) var effective_move
 export(MOVE) var not_effective_move

@@ -5,7 +5,11 @@
 	"events": [
 		{
 			"character": "Erika",
-			"text": "Hello there! My name is Erika Marson."
+			"text": "Hello there!"
+		},
+		{
+			"character": "Erika",
+			"text": "My name is Erika Marson, and I am 21 years-old!"
 		},
 		{
 			"character": "Player",
@@ -53,11 +57,19 @@
 		},
 		{
 			"character": "Erika",
-			"text": "Oh… sorry about that.. please forgive me. ;-;"
+			"text": "Oh... sorry about that.."
 		},
 		{
 			"character": "Erika",
-			"text": "Anyway, have you ever really hated your parents?\nLike, you don't want to see them ever again."
+			"text": "Please forgive me. ;-;"
+		},
+		{
+			"character": "Erika",
+			"text": "Anyways, have you ever really hated your parents?"
+		},
+		{
+			"character": "Erika",
+			"text": "Like, you don't want to see them ever again."
 		},
 		{
 			"character": "Player",

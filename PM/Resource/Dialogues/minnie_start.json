@@ -5,7 +5,11 @@
 	"events": [
 		{
 			"character": "Minnie",
-			"text": "Sigh... have you got any idea what this Application is?\nSuddenly my phone just installed this strange app."
+			"text": "Sigh... have you got any idea what this Application is?"
+		},
+		{
+			"character": "Minnie",
+			"text": "Suddenly my phone just installed this strange app."
 		},
 		{
 			"character": "Player",

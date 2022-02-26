@@ -25,7 +25,7 @@ export(String, MULTILINE) var high_damage_text
 export(String, MULTILINE) var listen_text
 export(String, MULTILINE) var ignore_text
 
-var selected_girl = GIRL.ERIKA
+var selected_girl = GIRL.HYUNA
 var rng = RandomNumberGenerator.new()
 
 var girls
@@ -70,11 +70,15 @@ func get_description(girl) -> int:
 func get_girl_description() -> int:
 	return get_description(selected_girl)
 
-func get_girl_success() -> String:
-	return girls[selected_girl].date_success
+func get_girl_success(index) -> String:
+	if index < girls[selected_girl].date_success.size():
+		return girls[selected_girl].date_success[index]
+	return ""
 
-func get_girl_fail() -> String:
-	return girls[selected_girl].date_fail
+func get_girl_fail(index) -> String:
+	if index < girls[selected_girl].date_fail.size():
+		return girls[selected_girl].date_fail[index]
+	return ""
 
 func get_girl_affection() -> int:
 	return girls[selected_girl].affection_threshold

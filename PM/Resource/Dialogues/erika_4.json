@@ -5,7 +5,11 @@
 	"events": [
 		{
 			"character": "Erika",
-			"text": "That's why I installed this app! To find a nice man, also someone my parents will like... I hope so. By the way, why did you install this app?"
+			"text": "That's why I installed this app! To find a nice man, also someone my parents will like... I hope so."
+		},
+		{
+			"character": "Erika",
+			"text": "By the way, why did you install this app?"
 		},
 		{
 			"character": "Player",

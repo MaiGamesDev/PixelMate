@@ -1,0 +1,39 @@
+{
+	"metadata": {
+		"name": "hyuna_15"
+	},
+	"events": [
+		{
+			"character": "Hyuna",
+			"text": "I knew it! You're very knowledgeable!"
+		},
+		{
+			"character": "Hyuna",
+			"text": "Ok! Last one!"
+		},
+		{
+			"character": "Hyuna",
+			"text": "What is your zodiac sign?"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Pisces",
+					"next": "hyuna_18",
+					"affection": 10
+				},
+				{
+					"text": "Libra",
+					"next": "hyuna_19",
+					"affection": 0
+				},
+				{
+					"text": "Taurus",
+					"next": "hyuna_18",
+					"affection": 16
+				}
+			]
+		}
+	]
+}

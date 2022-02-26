@@ -1,0 +1,63 @@
+{
+	"metadata": {
+		"name": "hyuna_8"
+	},
+	"events": [
+		{
+			"character": "Hyuna",
+			"text": "Anyway, do you believe in horoscopes?"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Yes!",
+					"next": "pass",
+					"affection": 10
+				},
+				{
+					"text": "No!",
+					"next": "hyuna_9",
+					"affection": 5
+				},
+				{
+					"text": "Err... kind of I guess?",
+					"next": "hyuna_9",
+					"affection": -5
+				}
+			]
+		},
+		{
+			"character": "Hyuna",
+			"text": "Great! I knew it"
+		},
+		{
+			"character": "Hyuna",
+			"text": "You're someone who I can talk to!"
+		},
+		{
+			"character": "Hyuna",
+			"text": "Let me quiz you about horoscopes then!"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Of course!",
+					"next": "hyuna_11",
+					"affection": 5
+				},
+				{
+					"text": "I would love to know more about you!",
+					"next": "hyuna_11",
+					"affection": 0
+				},
+				{
+					"text": "\\(^o^)/",
+					"next": "hyuna_11",
+					"affection": 10
+				}
+			]
+		}
+	]
+}

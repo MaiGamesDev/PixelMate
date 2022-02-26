@@ -1,0 +1,39 @@
+{
+	"metadata": {
+		"name": "hyuna_12"
+	},
+	"events": [
+		{
+			"character": "Hyuna",
+			"text": "Very nice! You pass the easy question!"
+		},
+		{
+			"character": "Hyuna",
+			"text": "Ok... a harder question!"
+		},
+		{
+			"character": "Hyuna",
+			"text": "Can you name a sign that belongs to the Air element?"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Libra",
+					"next": "hyuna_15",
+					"affection": 10
+				},
+				{
+					"text": "Scorpio",
+					"next": "hyuna_16",
+					"affection": 0
+				},
+				{
+					"text": "Virgo",
+					"next": "hyuna_16",
+					"affection": 0
+				}
+			]
+		}
+	]
+}

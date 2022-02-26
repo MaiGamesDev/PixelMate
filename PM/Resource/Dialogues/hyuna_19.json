@@ -1,0 +1,14 @@
+{
+	"metadata": {
+		"name": "hyuna_19"
+	},
+	"events": [
+		{
+			"character": "Hyuna",
+			"text": "Haha! You're a weird guy!"
+		},
+		{
+			"character": "End"
+		}
+	]
+}

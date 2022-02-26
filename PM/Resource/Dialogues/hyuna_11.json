@@ -1,0 +1,67 @@
+{
+	"metadata": {
+		"name": "hyuna_11"
+	},
+	"events": [
+		{
+			"character": "Hyuna",
+			"text": "I'm a Scorpio!"
+		},
+		{
+			"character": "Hyuna",
+			"text": "Do you know Scorpio's date?"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "November 22 to December 21",
+					"next": "pass",
+					"affection": 0
+				},
+				{
+					"text": "October 24 to November 21",
+					"next": "hyuna_12",
+					"affection": 10
+				},
+				{
+					"text": "June 22 to July 22",
+					"next": "pass",
+					"affection": 0
+				}
+			]
+		},
+		{
+			"character": "Hyuna",
+			"text": "Not quite right! But it's okay!"
+		},
+		{
+			"character": "Hyuna",
+			"text": "Ok... a harder question!"
+		},
+		{
+			"character": "Hyuna",
+			"text": "Can you name a sign that belongs to the Air element?"
+		},
+		{
+			"character": "Player",
+			"choices": [
+				{
+					"text": "Libra",
+					"next": "hyuna_15",
+					"affection": 10
+				},
+				{
+					"text": "Scorpio",
+					"next": "hyuna_16",
+					"affection": 0
+				},
+				{
+					"text": "Virgo",
+					"next": "hyuna_16",
+					"affection": 0
+				}
+			]
+		}
+	]
+}

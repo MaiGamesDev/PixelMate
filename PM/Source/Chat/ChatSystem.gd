@@ -29,6 +29,7 @@ onready var heart_effect = $Particles2D
 
 func _ready() -> void:
 	disable_buttons()
+	affection_progress.max_value = GameManager.get_girl_affection()
 	
 	$GirlCard/TextureRect.texture = GameManager.get_card_texture()
 	girl_portrait = GameManager.get_portrait_texture()
@@ -118,8 +119,8 @@ func check_affection(affection):
 	
 	if(current_affection < 0):
 		current_affection = 0
-	elif(current_affection > 100):
-		current_affection = 100
+#	elif(current_affection > 100):
+#		current_affection = 100
 	
 	affection_progress.value = current_affection
 	

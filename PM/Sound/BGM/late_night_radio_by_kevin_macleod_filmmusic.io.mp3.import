@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/late_night_radio_by_kevin_macleod_filmmusic.io.mp3-f1c1a773f14fbbb053329ffce33d15fc.mp3str"
+
+[deps]
+
+source_file="res://Sound/BGM/late_night_radio_by_kevin_macleod_filmmusic.io.mp3"
+dest_files=[ "res://.import/late_night_radio_by_kevin_macleod_filmmusic.io.mp3-f1c1a773f14fbbb053329ffce33d15fc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

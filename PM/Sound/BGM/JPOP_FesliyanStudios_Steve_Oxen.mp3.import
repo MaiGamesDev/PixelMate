@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/JPOP_FesliyanStudios_Steve_Oxen.mp3-826773690603bafab2669d175d6c9a4b.mp3str"
+
+[deps]
+
+source_file="res://Sound/BGM/JPOP_FesliyanStudios_Steve_Oxen.mp3"
+dest_files=[ "res://.import/JPOP_FesliyanStudios_Steve_Oxen.mp3-826773690603bafab2669d175d6c9a4b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

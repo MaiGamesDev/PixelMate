@@ -3,6 +3,8 @@ extends Node
 var girl_labels = Array()
 
 func _ready() -> void:
+	BGM.change_music("res://Sound/BGM/late_night_radio_by_kevin_macleod_filmmusic.io.mp3")
+	
 	girl_labels.append($VBoxContainer/Button/Erika/Label)
 	girl_labels.append($VBoxContainer/Button/Minnie/Label)
 	girl_labels.append($VBoxContainer/Button/Hyuna/Label)

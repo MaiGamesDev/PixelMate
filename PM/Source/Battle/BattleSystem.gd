@@ -31,6 +31,8 @@ onready var timer = $Timer
 onready var capsule_player = $EnemyPlace/AnimationPlayer
 
 func _ready() -> void:
+	BGM.change_music("res://Sound/BGM/late_night_radio_by_kevin_macleod_filmmusic.io.mp3")
+	
 	rng.randomize()
 	girl_name = GameManager.get_girl_name()
 	
@@ -237,12 +239,8 @@ func play_win_sound():
 	var sound = load("res://Source/Audio/SoundPlayer.tscn").instance()
 	sound.stream = load("res://Sound/SFX/Gotcha.wav")
 	
-	var sound2 = load("res://Source/Audio/SoundPlayer.tscn").instance()
-	sound2.stream = load("res://Sound/SFX/You_win.mp3")
-	
 	add_child(sound)
-	add_child(sound2)
-
+	
 func _on_Flirt_pressed() -> void:
 	move = GameManager.MOVE.FLIRT
 	play_turn()

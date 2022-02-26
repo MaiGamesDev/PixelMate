@@ -2,6 +2,9 @@ extends Node
 
 var scene_path
 
+func _ready():
+	BGM.change_music("res://Sound/BGM/Regrets-David_Fesliyan.mp3")
+
 func next_scene():
 	get_tree().change_scene(scene_path)
 

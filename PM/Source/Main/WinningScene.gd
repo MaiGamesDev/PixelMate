@@ -1,5 +1,8 @@
 extends Node
 
+func _ready():
+	BGM.change_music("res://Sound/BGM/JPOP_FesliyanStudios_Steve_Oxen.mp3")
+
 func play_intro():
 	$AnimationPlayer.play("intro")
 

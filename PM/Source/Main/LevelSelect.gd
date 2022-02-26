@@ -18,12 +18,12 @@ func next_scene():
 
 func _on_Erika_pressed():
 	$AnimationPlayer.play("fadeout")
-	GameManager.selected_girl = GameManager.Girl.ERIKA
+	GameManager.selected_girl = GameManager.GIRL.ERIKA
 
 func _on_Minnie_pressed():
 	$AnimationPlayer.play("fadeout")
-	GameManager.selected_girl = GameManager.Girl.MINNIE
+	GameManager.selected_girl = GameManager.GIRL.MINNIE
 
 func _on_Hyuna_pressed():
 	$AnimationPlayer.play("fadeout")
-	GameManager.selected_girl = GameManager.Girl.HYUNA
+	GameManager.selected_girl = GameManager.GIRL.HYUNA

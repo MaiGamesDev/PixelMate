@@ -14,33 +14,56 @@
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
-girl_sprites = [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 9 ) ]
-effective_moves = [ 1, 0, 2 ]
-not_effective_moves = [ 0, 2, 1 ]
+low_damage_text = "She says you are different than what she imagined. It deals low damage."
+high_damage_text = "She says you are too cringy. It deals high damage."
+listen_text = "She is ready to listen to you. It does nothing."
+ignore_text = "She is visibly ignoring you. It protects her."
 
 [node name="Erika" type="Node" parent="."]
 script = ExtResource( 11 )
 age = 21
+dialogue_start_file = "res://Resource/Dialogues/erika_start.json"
 short_description = "I love any movie where they spontaneously break out into song."
 card_texture = ExtResource( 4 )
 portrait_texture = ExtResource( 5 )
+sprite_texture = ExtResource( 8 )
 affection_threshold = 40
 date_success = "Sure, I think you're a good person! I really want to meet you~"
 date_fail = "Thanks for inviting me. But sorry, I am too busy to meet someone for now. It is nice meeting you!"
+effective_move = 1
+flirt_texts = [ "Erika is shy from your words.", "Erika is touched by your words!", "Erika doesn't know what to say for your flirt." ]
+listen_texts = [ "Erika tells you a bit of her worry about her parents.", "Erika thinks you are a really nice man.", "Erika doesn't tell you much." ]
+humour_texts = [ "Erika chuckles.", "Erika is loughing so hard.", "Erika is just silent." ]
+gift_texts = [ "Erika thinks you are a nice man and agrees.", "Eriksa says she is too busy to date someone." ]
 
 [node name="Minnie" type="Node" parent="."]
 script = ExtResource( 11 )
 age = 24
+dialogue_start_file = "res://Resource/Dialogues/minnie_start.json"
 short_description = "I like the way little kids get grumpy and confused when they're tired."
 card_texture = ExtResource( 2 )
 portrait_texture = ExtResource( 6 )
+sprite_texture = ExtResource( 10 )
 affection_threshold = 80
 date_success = "HUH?!! You do really want to see me painting! I guess, I'd love to see you too! Let's meet up at my place."
 date_fail = "I guess I want to know you better."
+not_effective_move = 2
+flirt_texts = [ "Minnie is comfortable with your flirt.", "Minnie loves it!", "Minnie steps away from you." ]
+listen_texts = [ "Minnie likes your company.", "Minnie tells you her worry about the world.", "Minnie is a bit reluctant to tell you." ]
+humour_texts = [ "Minnie smiles hearing your joke.", "Minnie is chuckling.", "Minnie just shakes her head slowly." ]
+gift_texts = [ "Minnie would love to.", "Minnie says she needs to know you better." ]
 
 [node name="Hyuna" type="Node" parent="."]
 script = ExtResource( 11 )
 age = 28
+dialogue_start_file = "res://Resource/Dialogues/hyuna_start.json"
 short_description = "I want a guy to say bless you when I sneeze."
 card_texture = ExtResource( 3 )
 portrait_texture = ExtResource( 7 )
+sprite_texture = ExtResource( 9 )
+effective_move = 2
+not_effective_move = 1
+flirt_texts = [ "Hyuna blushes a bit.", "Hyuna thinks you are romantic!", "Hyuna thinks you act too close." ]
+listen_texts = [ "Hyuna tells you her worries.", "Hyuna feels she can depend on you.", "Hyuna doesn't tell you anything but she appreciates it." ]
+humour_texts = [ "Hyuna appreciates your joke.", "Hyuna thinks you are funny.", "Hyuna says you are not funny." ]
+gift_texts = [ "Hyuna says she wouldn't mind.", "Hyuna says she is not looking for a boyfriend yet." ]

@@ -57,7 +57,11 @@
 		},
 		{
 			"character": "Minnie",
-			"text": "\nYeah... human rights violations,\nworld disasters and wars are all happening in our eyes..."
+			"text": "Yeah..."
+		},
+		{
+			"character": "Minnie",
+			"text": "Human rights violations, world disasters and wars are all happening in our eyes..."
 		},
 		{
 			"character": "Player",
@@ -81,7 +85,11 @@
 		},
 		{
 			"character": "Minnie",
-			"text": "Hehe... thanks, it was nice to find someone who understands it.\nAnyway, we should've lightened up the situation :)"
+			"text": "Hehe... thanks, it was nice to find someone who understands it."
+		},
+		{
+			"character": "Minnie",
+			"text": "Anyway, we should've lightened up the situation :)"
 		},
 		{
 			"character": "Player",

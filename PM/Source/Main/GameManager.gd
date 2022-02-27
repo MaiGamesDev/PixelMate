@@ -25,7 +25,7 @@ export(String, MULTILINE) var high_damage_text
 export(String, MULTILINE) var listen_text
 export(String, MULTILINE) var ignore_text
 
-var selected_girl = GIRL.ERIKA
+var selected_girl = GIRL.MINNIE
 var rng = RandomNumberGenerator.new()
 
 var girls
@@ -56,8 +56,7 @@ func get_not_effective_move() -> int:
 	return girls[selected_girl].not_effective_move
 
 func get_girl_move() -> int:
-#	return rng.randi_range(0, GIRL_MOVE.size() - 1)
-	return GIRL_MOVE.HIGH
+	return rng.randi_range(0, GIRL_MOVE.size() - 1)
 
 func get_age(girl) -> int:
 	return girls[girl].age

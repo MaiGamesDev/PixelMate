@@ -5,7 +5,11 @@
 	"events": [
 		{
 			"character": "Minnie",
-			"text": "Huh?!! You're weird...\n\nLet's end this conversation for the best between both of us."
+			"text": "Huh?!! You're weird..."
+		},
+		{
+			"character": "Minnie",
+			"text": "Let's end this conversation for the best between both of us."
 		},
 		{
 			"character": "End"

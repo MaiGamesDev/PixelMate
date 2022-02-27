@@ -5,7 +5,11 @@
 	"events": [
 		{
 			"character": "Minnie",
-			"text": "Huh.. you're a funny guy... I guess there's no harm in chatting with you.\nHave you got any plans for this Valentine's day?"
+			"text": "Huh.. you're a funny guy... I guess there's no harm in chatting with you."
+		},
+		{
+			"character": "Minnie",
+			"text": "Have you got any plans for this Valentine's day?"
 		},
 		{
 			"character": "Player",

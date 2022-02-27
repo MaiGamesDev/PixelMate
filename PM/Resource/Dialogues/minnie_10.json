@@ -5,7 +5,11 @@
 	"events": [
 		{
 			"character": "Minnie",
-			"text": "Anyway, I've got quizzes for you! Which famous painter was also a sculptor, an architect, and an engineer?"
+			"text": "Anyway, I've got quizzes for you!"
+		},
+		{
+			"character": "Minnie",
+			"text": "Which famous painter was also a sculptor, an architect, and an engineer?"
 		},
 		{
 			"character": "Player",
@@ -33,7 +37,7 @@
 		},
 		{
 			"character": "Minnie",
-			"text": "Next one, which one is the famous painter of the “Lady With a Pearl Earring” that appears in the Mr.Bean movie?"
+			"text": "Next one, which one is the famous painter of the \"Lady With a Pearl Earring\" that appears in the Mr.Bean movie?"
 		},
 		{
 			"character": "Player",

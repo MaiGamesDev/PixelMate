@@ -9,7 +9,11 @@
 		},
 		{
 			"character": "Minnie",
-			"text": "Okay last one! Which famous painter is often associated with Pop Art?"
+			"text": "Okay last one!"
+		},
+		{
+			"character": "Minnie",
+			"text": "Which famous painter is often associated with Pop Art?"
 		},
 		{
 			"character": "Player",
@@ -37,7 +41,11 @@
 		},
 		{
 			"character": "Minnie",
-			"text": "It's very nice to talk to you! I've never been this comfortable talking to someone else."
+			"text": "It's very nice to talk to you!"
+		},
+		{
+			"character": "Minnie",
+			"text": "I've never been this comfortable talking to someone else."
 		},
 		{
 			"character": "End"

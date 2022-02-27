@@ -8,6 +8,9 @@ export(Array, String, MULTILINE) var listen_texts
 export(Array, String, MULTILINE) var humour_texts
 export(Array, String, MULTILINE) var gift_texts
 
+export(String, MULTILINE) var girl_dead_text
+export(String, MULTILINE) var player_dead_text
+
 var catched = false
 var health = 100
 var girl_health = 100
@@ -46,12 +49,9 @@ func _ready() -> void:
 
 func standby():
 	if girl_health == 0 or health == 0:
-		timer.start(1.5)
-		yield(timer, "timeout")
 		next_scene_path = "res://Source/Main/GameOver.tscn"
 		$AnimationPlayer.play("fadeout")
-	
-	if catched:
+	elif catched:
 		timer.start(1.5)
 		yield(timer, "timeout")
 		next_scene_path = "res://Source/Main/WinningScene.tscn"
@@ -86,32 +86,44 @@ func play_turn():
 		if girl_move != GameManager.GIRL_MOVE.IGNORE:
 			battle_log.text = "It is effective! " + GameManager.get_effective_text(move)
 			
+			yield(wait(battle_log.text.length() * 0.04), "completed")
 			apply_damage(base_damage * 1.5)
+			yield(wait(battle_log.text.length() * 0.04), "completed")
+			
 			if girl_health == 0:
+				battle_log.text = girl_dead_text
+				yield(wait(battle_log.text.length() * 0.08), "completed")
+			
 				standby()
 				return
-			
-			yield(wait(battle_log.text.length() * 0.08), "completed")
 	elif move == girl_not_effective_move:
 		if girl_move != GameManager.GIRL_MOVE.IGNORE:
 			battle_log.text = "It is not effective! " + GameManager.get_not_effective_text(move)
 			
+			yield(wait(battle_log.text.length() * 0.04), "completed")
 			apply_damage(base_damage * 0.5)
+			yield(wait(battle_log.text.length() * 0.04), "completed")
+			
 			if girl_health == 0:
+				battle_log.text = girl_dead_text
+				yield(wait(battle_log.text.length() * 0.08), "completed")
+			
 				standby()
 				return
-			
-			yield(wait(battle_log.text.length() * 0.08), "completed")
 	elif move != GameManager.MOVE.GIFT:
 		if girl_move != GameManager.GIRL_MOVE.IGNORE:
 			battle_log.text = GameManager.get_normal_text(move)
 			
+			yield(wait(battle_log.text.length() * 0.04), "completed")
 			apply_damage(base_damage)
+			yield(wait(battle_log.text.length() * 0.04), "completed")
+			
 			if girl_health == 0:
+				battle_log.text = girl_dead_text
+				yield(wait(battle_log.text.length() * 0.08), "completed")
+			
 				standby()
 				return
-			
-			yield(wait(battle_log.text.length() * 0.08), "completed")
 	else:
 		yield(catch(), "completed")
 		
@@ -126,19 +138,31 @@ func play_turn():
 	
 	match girl_move:
 		GameManager.GIRL_MOVE.LOW:
-			text = GameManager.low_damage_text
+			battle_log.text = GameManager.low_damage_text
+			
+			yield(wait(battle_log.text.length() * 0.04), "completed")
 			get_damage(girl_base_damage)
+			yield(wait(battle_log.text.length() * 0.04), "completed")
+			
+			if health == 0:
+				battle_log.text = player_dead_text
+				yield(wait(battle_log.text.length() * 0.08), "completed")
 		GameManager.GIRL_MOVE.HIGH:
-			text = GameManager.high_damage_text
+			battle_log.text = GameManager.high_damage_text
+			
+			yield(wait(battle_log.text.length() * 0.04), "completed")
 			get_damage(girl_base_damage * 1.5)
+			yield(wait(battle_log.text.length() * 0.04), "completed")
+			
+			if health == 0:
+				battle_log.text = player_dead_text
+				yield(wait(battle_log.text.length() * 0.08), "completed")
 		GameManager.GIRL_MOVE.LISTEN:
-			text = GameManager.listen_text
+			battle_log.text = GameManager.listen_text
+			yield(wait(battle_log.text.length() * 0.08), "completed")
 		GameManager.GIRL_MOVE.IGNORE:
-			text = GameManager.ignore_text
-	
-	battle_log.text = text
-	
-	yield(wait(battle_log.text.length() * 0.08), "completed")
+			battle_log.text = GameManager.ignore_text
+			yield(wait(battle_log.text.length() * 0.08), "completed")
 	
 	standby()
 

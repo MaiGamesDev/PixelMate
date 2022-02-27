@@ -1,6 +1,5 @@
 extends AudioStreamPlayer
 
-
 onready var tween_out = get_node("Tween")
 
 var next_stream = ""
@@ -12,7 +11,7 @@ func change_music(music : String):
 	if stream == load(music):
 		return
 	fade_out()
-	yield($Tween,"tween_all_completed")
+	yield($Tween, "tween_all_completed")
 	
 	volume_db = 0
 	stream = load(music)
@@ -21,3 +20,6 @@ func change_music(music : String):
 func fade_out():
 	tween_out.interpolate_property(self, "volume_db", 0, -80, transition_duration, transition_type, Tween.EASE_IN, 0)
 	tween_out.start()
+
+func _on_Tween_all_completed():
+	pass

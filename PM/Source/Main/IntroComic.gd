@@ -2,9 +2,9 @@ extends Node
 
 onready var player = $AnimationPlayer
 
-func _ready():
-	BGM.stream = load("res://Sound/BGM/Regrets-David_Fesliyan.mp3")
-	BGM.play()
+#func _ready():
+#	BGM.stream = load("res://Sound/BGM/Regrets-David_Fesliyan.mp3")
+#	BGM.play()
 
 func play_intro():
 	player.play("intro")

@@ -30,6 +30,7 @@ onready var heart_effect = $Particles2D
 func _ready() -> void:
 	disable_buttons()
 	GameManager.last_scene = "Chat/ChatRoom.tscn"
+	BGM.change_music("res://Sound/BGM/late_night_radio_by_kevin_macleod_filmmusic.io.mp3")
 	affection_progress.max_value = GameManager.get_girl_affection()
 	
 	$GirlCard/TextureRect.texture = GameManager.get_card_texture()

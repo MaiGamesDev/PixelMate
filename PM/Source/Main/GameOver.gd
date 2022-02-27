@@ -15,7 +15,6 @@ func _on_Yes_button_up():
 	else:
 		scene_path += GameManager.last_scene
 	
-	BGM.change_music("")
 	$AnimationPlayer.play("fadeout")
 
 func _on_No_button_up():

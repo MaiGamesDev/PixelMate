@@ -8,8 +8,14 @@ export var transition_duration = 1.00
 export var transition_type = 1 # TRANS_SINE
 
 func change_music(music : String):
+	if music == "":
+		fade_out()
+		yield($Tween, "tween_all_completed")
+		return
+	
 	if stream == load(music):
 		return
+	
 	fade_out()
 	yield($Tween, "tween_all_completed")
 	

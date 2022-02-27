@@ -597,7 +597,6 @@ anims/fadein = SubResource( 31 )
 anims/fadeout = SubResource( 37 )
 
 [node name="FadeEffect" type="ColorRect" parent="."]
-visible = false
 margin_right = 480.0
 margin_bottom = 270.0
 mouse_filter = 2

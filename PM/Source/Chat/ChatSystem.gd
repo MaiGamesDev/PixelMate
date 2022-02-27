@@ -29,6 +29,7 @@ onready var heart_effect = $Particles2D
 
 func _ready() -> void:
 	disable_buttons()
+	GameManager.last_scene = "Chat/ChatRoom.tscn"
 	affection_progress.max_value = GameManager.get_girl_affection()
 	
 	$GirlCard/TextureRect.texture = GameManager.get_card_texture()

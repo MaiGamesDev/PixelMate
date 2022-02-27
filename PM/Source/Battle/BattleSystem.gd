@@ -36,6 +36,7 @@ onready var timer = $Timer
 onready var capsule_player = $EnemyPlace/AnimationPlayer
 
 func _ready() -> void:
+	GameManager.last_scene = "Battle/BattleScene.tscn"
 	BGM.change_music("res://Sound/BGM/late_night_radio_by_kevin_macleod_filmmusic.io.mp3")
 	
 	rng.randomize()

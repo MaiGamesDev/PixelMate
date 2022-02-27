@@ -27,6 +27,7 @@ export(String, MULTILINE) var ignore_text
 
 var selected_girl = GIRL.ERIKA
 var rng = RandomNumberGenerator.new()
+var last_scene = ""
 
 var girls
 

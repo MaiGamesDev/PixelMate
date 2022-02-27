@@ -25,7 +25,7 @@ export(String, MULTILINE) var high_damage_text
 export(String, MULTILINE) var listen_text
 export(String, MULTILINE) var ignore_text
 
-var selected_girl = GIRL.MINNIE
+var selected_girl = GIRL.ERIKA
 var rng = RandomNumberGenerator.new()
 
 var girls

@@ -23,6 +23,8 @@ var girl_not_effective_move
 var next_scene_path
 
 onready var girl_sprite = $EnemyPlace/EnemyStanding
+onready var player_sprite = $PlayerPlace/PlayerStanding
+
 onready var girl_hp_bar = $EnemyStatePlace/EnemyHPBar/Progress
 onready var hp_bar = $PlayerStatePlace/PlayerHPBar/Progress
 
@@ -75,6 +77,7 @@ func play_turn():
 		GameManager.MOVE.HUMOUR:
 			text = humour_texts[rng.randi_range(0, humour_texts.size() - 1)]
 		GameManager.MOVE.GIFT:
+			player_sprite.animation = "gift"
 			text = gift_texts[rng.randi_range(0, gift_texts.size() - 1)]
 	
 	battle_log.text = text
@@ -134,7 +137,10 @@ func play_turn():
 			return
 		else:
 			battle_log.text = GameManager.get_not_effective_text(move)
-			yield(wait(battle_log.text.length() * 0.08), "completed")
+			
+			yield(wait(battle_log.text.length() * 0.04), "completed")
+			player_sprite.animation = "idle"
+			yield(wait(battle_log.text.length() * 0.04), "completed")
 	
 	match girl_move:
 		GameManager.GIRL_MOVE.LOW:

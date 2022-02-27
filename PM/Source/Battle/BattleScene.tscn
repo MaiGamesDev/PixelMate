@@ -291,7 +291,7 @@ tracks/1/keys = {
 
 [node name="BattleScene" type="Node"]
 script = ExtResource( 15 )
-girl_base_damage = 100
+girl_base_damage = 20
 flirt_texts = [ "You try to Flirt. You tell her, \"I hope you know CPR, because you just took my breath away!\"", "You try to Flirt. You tell her, \"I ought to complain to Spotify for you not being named this week’s hottest single.\"", "You try to Flirt. You tell her, \"Do you happen to have a Band-Aid? ‘Cause I scraped my knees falling for you.\"", "You try to Flirt. You tell her, \"I never believed in love at first sight, but that was before I saw you.\"" ]
 listen_texts = [ "You offer your ear for her." ]
 humour_texts = [ "You make a joke. You tell her, \"If you were a vegetable, you’d be a 'cute-cumber.'\"", "You make a joke. You tell her, \"Why do we tell actors to  ‘break a leg?’ Because every play has a cast.\"", "You make a joke. You tell her, \"Don't challenge Death to a pillow fight. Unless you're prepared for the reaper cushions.\"", "You make a joke. You tell her, \"There's a fine line between a numerator and a denominator.\"", "You make a joke. You tell her, \"Did you hear about the first restaurant to open on the moon? It had great food, but no atmosphere.\"", "You make a joke. You tell her, \"What did one ocean say to the other ocean? Nothing, it just waved.\"", "You make a joke. You tell her, \"Do you want to hear a construction joke? Sorry, I'm still working on it.\"", "You make a joke. You tell her, \"Why should you never trust stairs? They're always up to something.\"", "You make a joke. You tell her, \"Which bear is the most condescending? A pan-duh!\"", "You make a joke. You tell her, \"What kind of noise does a witch's vehicle make? Brrrroooom, brrroooom.\"", "You make a joke. You tell her, \"What’s brown and sticky? A stick.\"", "You make a joke. You tell her, \"Why are elevator jokes so classic and good? They work on many levels.\"" ]
@@ -597,6 +597,7 @@ anims/fadein = SubResource( 31 )
 anims/fadeout = SubResource( 37 )
 
 [node name="FadeEffect" type="ColorRect" parent="."]
+visible = false
 margin_right = 480.0
 margin_bottom = 270.0
 mouse_filter = 2
